@@ -108,6 +108,7 @@
     <script>scripts\heal_monster.gml</script>
     <script>scripts\draw_log_text.gml</script>
     <script>scripts\deal_damage.gml</script>
+    <script>scripts\update_buffs.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fTest</font>

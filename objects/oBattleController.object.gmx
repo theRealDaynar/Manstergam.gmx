@@ -60,6 +60,8 @@ action_monster = noone//oBattleMonster.id
 force_show_log = false
 log_location = 0
 pressed_back = 0
+hovertime = 0
+current_hover = noone
 //TEMP
 /*
 for(var yy = 0; yy &lt; 2; yy ++)
@@ -741,6 +743,13 @@ if selected_monster.action_state = 0
             must_slap = false
             if mouse_x &gt; room_width/6 and mouse_x &lt; 5 * room_width/6 and mouse_y &gt;= yy + spaceing * (.5 + i % 2) and mouse_y &lt;= yy + spaceing * (1.5 + i % 2) and ((room_width/2 &lt;= mouse_x and i div 2) or (room_width/2 &gt;= mouse_x and !(i div 2)))
             {
+                if current_hover = i
+                    hovertime++
+                else
+                {
+                    hovertime = 0
+                    current_hover = i
+                }
                 col = c_white
                 if (mb_pressed or mb_released)
                 {
@@ -788,6 +797,7 @@ if selected_monster.action_state = 0
     {
         if mouse_y &gt;= yy
             {
+                hovertime++
                 col = c_white
                 if (mb_pressed or mb_released)
                 {
@@ -832,6 +842,13 @@ if selected_monster.action_state = 0
         col = c_black
         if mouse_y &gt;= yy and mouse_x &gt; 5 * room_width/6
             {
+                if current_hover = 4
+                    hovertime++
+                else
+                {
+                    hovertimer = 0
+                    current_hover = 4
+                }
                 col = c_white
                 if (mb_pressed or mb_released)
                 {
@@ -907,6 +924,20 @@ draw_set_font(fTest)
 }
 if mb_released
     pressed_back = 0
+if mouse_y &lt; yy
+{
+    hovertime = 0
+    current_hover = 0
+}
+else if hovertime &gt;= room_speed
+{
+    draw_set_font(fSuperTest)
+    if current_hover &lt; 4
+        draw_log_text(mouse_x,mouse_y - 25,script_execute(selected_monster.moves[current_hover],m_DESC),c_red)
+    else
+        draw_log_text(mouse_x,mouse_y - 25,script_execute(m_slap,m_DESC),c_red)
+    draw_set_font(fTest)
+}
 </string>
           </argument>
         </arguments>
