@@ -16,7 +16,7 @@ case 2:
     return "Fever Scratch"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target."
+    return "Deals minor strength bio damage, 1/2 fever build up."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     with(target)

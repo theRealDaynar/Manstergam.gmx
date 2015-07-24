@@ -15,7 +15,7 @@ case 2:
     return "Ooze Spit"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target, and lowers their speed by 1."
+    return "Deals dexterity based bio damage to target and lowers their speed."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     with(target)

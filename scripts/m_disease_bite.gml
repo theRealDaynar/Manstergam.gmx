@@ -16,7 +16,7 @@ case 2:
     return "Disease Bite"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target."
+    return "Bio strength attack, 1/2 disease build up."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     with(target)

@@ -14,7 +14,7 @@ case 2:
     return "Slumber"
 break;
 case 3:
-    return "Restores 2.5 * attack stamina."
+    return "Put self to sleep, restore stamina."
 break;
 case m_EXECUTE:
     stam = max_stam

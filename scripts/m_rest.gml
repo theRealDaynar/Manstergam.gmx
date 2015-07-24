@@ -14,7 +14,7 @@ case 2:
     return "Rest"
 break;
 case 3:
-    return "Restores 2.5 * attack stamina."
+    return "Restore own health and stamina."
 break;
 case m_EXECUTE:
     stam += floor(max_stam/2)

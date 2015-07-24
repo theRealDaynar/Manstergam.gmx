@@ -15,7 +15,7 @@ case 2:
     return "Freeze"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target."
+    return "Power based cold damage."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     with(target)

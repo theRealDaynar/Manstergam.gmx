@@ -16,7 +16,7 @@ case 2:
     return "Sprint bite"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target."
+    return "Speed is doubled this turn, strength based normal attack."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     with(target)

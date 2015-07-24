@@ -15,7 +15,7 @@ case m_NAME:
     return "Quick Peck"
 break;
 case m_DESC:
-    return "Deals 1 * attack damage to the selected target."
+    return "Double target strength based wind damage."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     with(target)

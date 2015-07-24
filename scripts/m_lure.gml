@@ -15,7 +15,7 @@ case 2:
     return "Lure"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target."
+    return "All moves used by the opposite team will target the user this turn."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     with(oBattleMonster)

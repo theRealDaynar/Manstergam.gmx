@@ -16,7 +16,7 @@ case 2:
     return "Roll Slam"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target."
+    return "Row targetted strength normal attack."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     if team = 1

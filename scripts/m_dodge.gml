@@ -18,7 +18,7 @@ case m_NAME:
     return "Dodge"
 break;
 case m_DESC:
-    return "Fly into the air for a turn then deal damage."
+    return "All attacks miss you this turn."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     dodge_timer = 2

@@ -15,7 +15,7 @@ case 2:
     return "Hypnosis"
 break;
 case 3:
-    return "Stops target from attacking."
+    return "Forces target to use planned move on the opposite team."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     //show_debug_message(target)

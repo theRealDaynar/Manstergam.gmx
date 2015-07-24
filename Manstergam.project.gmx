@@ -75,7 +75,7 @@
       <script>scripts\m_roll_slam.gml</script>
       <script>scripts\m_scratch.gml</script>
       <script>scripts\m_scream.gml</script>
-      <script>scripts\m_secrete_ooze.gml</script>
+      <script>scripts\m_secrete.gml</script>
       <script>scripts\m_sharp_wind.gml</script>
       <script>scripts\m_shock.gml</script>
       <script>scripts\m_shroud_snipe.gml</script>

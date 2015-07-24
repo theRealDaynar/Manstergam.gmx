@@ -11,7 +11,7 @@ case 2:
     return "Crab Apple"
 break;
 case 3:
-    return "Stam + atk * 2.5 target"
+    return "Nature attack, restores target stamina."
 break;
 case m_EXECUTE:
     with(target)

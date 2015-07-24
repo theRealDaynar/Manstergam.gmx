@@ -15,7 +15,7 @@ case 2:
     return "Blind"
 break;
 case 3:
-    return "Stops target from attacking."
+    return "Stuns target. Priority."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
      with(oBattleController)

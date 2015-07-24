@@ -15,7 +15,7 @@ case 2:
     return "Sweet Apple"
 break;
 case 3:
-    return "Heals 2 * attack damage to the selected target."
+    return "Dexterity based target heal."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     var heal = str * 2;

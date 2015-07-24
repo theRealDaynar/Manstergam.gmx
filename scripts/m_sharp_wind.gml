@@ -16,7 +16,7 @@ case 2:
     return "Sharp Wind"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target."
+    return "Power based wind attack."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     with(target)

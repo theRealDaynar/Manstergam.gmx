@@ -1,23 +1,25 @@
-///m_tranquilize()
+///m_secrete()
 var action = 0;
-var stam_cost = 7
+var stam_cost = 4
 if argument_count != 0
     action = argument[0]
 switch(action)
 {
 case m_MTYPE:
-    return mt_O
+    return mt_HEAL
 break;
 case 1:
-    return 0;
+    return 2;
 break;
 case 2:
-    return "Tranquilize"
+    return "Secrete"
 break;
 case 3:
-    return "1/2 sleep build up on target."
+    return "Power based self heal."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    target.sleep_level += .5 * (1 + hex_level)
+    var heal = pow;
+    heal_monster(id,heal);
     stam -= stam_cost
+cd[selected_move] = 1
 }

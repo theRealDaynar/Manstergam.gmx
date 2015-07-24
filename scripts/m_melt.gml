@@ -11,7 +11,7 @@ case 2:
     return "Melt"
 break;
 case 3:
-    return "Spd + 2, hp - hp/3"
+    return "Increase speed on self."
 break;
 case m_EXECUTE:
     spd_mod += 2

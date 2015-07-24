@@ -11,7 +11,7 @@ case 2:
     return "Solidify"
 break;
 case 3:
-    return "Spd - 2, def +"
+    return "Increases users defense."
 break;
 case m_EXECUTE:
     update_defense(id,1)

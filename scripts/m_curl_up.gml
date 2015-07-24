@@ -15,7 +15,7 @@ case 2:
     return "Curl Up"
 break;
 case 3:
-    return "+ 1 defence."
+    return "Increase own defense."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     update_defense(id,1)

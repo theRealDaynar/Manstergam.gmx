@@ -14,7 +14,7 @@ case 2:
     return "Killscreen"
 break;
 case 3:
-    return "Stops target from attacking."
+    return "Sacrifice self to stun entire enemy team."
 break;
 case m_EXECUTE:
      with(oBattleController)

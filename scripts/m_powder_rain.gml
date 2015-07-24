@@ -15,7 +15,7 @@ case 2:
     return "Powder Rain"
 break;
 case 3:
-    return "Stops target from attacking."
+    return "Sets weather to powder rain. After 6 turns all monsters fall asleep."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
      if instance_exists(oBattleController.weather)

@@ -15,7 +15,7 @@ case 2:
     return "Slap"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target."
+    return "Low base damage normal type attack. Scales with your lowest attack stat."
 break;
 case m_EXECUTE:
     with(target)

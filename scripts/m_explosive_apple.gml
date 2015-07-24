@@ -15,7 +15,7 @@ case 2:
     return "Explosive Apple"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target. 3 turn cd."
+    return "High damage dexterity nature attack. Cooldown."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     with(target)

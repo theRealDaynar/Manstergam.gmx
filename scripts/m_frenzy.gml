@@ -16,7 +16,7 @@ case m_MTYPE:
     return mt_O
 break;
 case m_DESC:
-    return "Deals 1 * attack damage to the selected target."
+    return "Triple target dark attack, increases in damage with each use."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     with(target)

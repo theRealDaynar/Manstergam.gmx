@@ -15,7 +15,7 @@ case 2:
     return "Regenerate"
 break;
 case 3:
-    return "Heals 2 * attack."
+    return "Dexterity based self heal."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     var heal = dex * 2;

@@ -14,7 +14,7 @@ case 2:
     return "Life Link"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target."
+    return "Lifelinks target monster. All damage received by this monster will also be dealt to the lifelinked monster."
 break;
 case m_EXECUTE:
     damage_bond = target

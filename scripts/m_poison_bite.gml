@@ -16,7 +16,7 @@ case 2:
     return "Poison bite"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target."
+    return "Deals low strength based bio damage, 1/2 poison build up."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     with(target)

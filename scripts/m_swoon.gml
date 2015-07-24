@@ -12,7 +12,7 @@ case 2:
     return "Swoon"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target."
+    return "Infatuates target."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     target.atk --

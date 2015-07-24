@@ -15,7 +15,7 @@ case m_NAME:
     return "Soar"
 break;
 case m_DESC:
-    return "Fly into the air for a turn then deal damage."
+    return "Invincible for one turn, attack on the next."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     if area = 0

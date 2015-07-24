@@ -25,6 +25,6 @@ case 2:
     return "Divebomb"
 break;
 case 3:
-    return "Deals 1 * attack damage to the selected target."
+    return "Strength wind attack."
 break;
 }
