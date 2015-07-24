@@ -13,7 +13,7 @@ switch(argument0)
 case 0:
 name = "Pink Fluff"
 moves[0] = m_ooze_spit
-moves[1] = m_secrete_ooze
+moves[1] = m_secrete
 moves[2] = m_curl_up
 moves[3] = m_scream
 ds_map_add(resistances,'heat',1.25)
