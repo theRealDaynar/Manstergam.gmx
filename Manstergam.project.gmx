@@ -110,6 +110,8 @@
     <scripts name="UI">
       <script>scripts\invert_screen_Color.gml</script>
       <script>scripts\draw_log_text.gml</script>
+      <script>scripts\draw_text_outline.gml</script>
+      <script>scripts\init_word_highlights.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

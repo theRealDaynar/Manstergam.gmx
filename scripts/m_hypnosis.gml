@@ -25,6 +25,8 @@ case m_COST:return stam_cost;break;case m_EXECUTE:
         while(!ds_queue_empty(target.target_que))
         {
             target.target = ds_queue_dequeue(target.target_que)
+            if instance_exists(target.target)
+            {
             if target.target.team = 1
                 for(var xx = 0;xx < 2;xx++)
                     for(var yy = 0; yy < 2;yy++)
@@ -47,11 +49,12 @@ case m_COST:return stam_cost;break;case m_EXECUTE:
                     ds_queue_enqueue(new_target_que,target.target)
                 else
                     ds_queue_enqueue(new_target_que,target.id)
+            }
         }
         ds_queue_destroy(target.target_que)
         target.target_que = new_target_que
     }
-    else
+    else if instance_exists(target.target)
     {
     //show_debug_message(target.target)
     if target.target.team = 1

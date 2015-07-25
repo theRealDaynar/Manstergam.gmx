@@ -444,7 +444,7 @@ else
             dmg = ceil(deflect_percent * other.dmg)
             event_user(0)
         }
-    ds_list_destroy(tags)
+    
 }
 var d_txt = instance_create(x + 100, y + 100,oDamageText);
 d_txt.txt = dmg
@@ -463,6 +463,7 @@ if instance_exists(damage_bond) and damage_bond.id != id and -1 = ds_list_find_i
         dmg = other.dmg
         event_user(0)
     }
+ds_list_destroy(tags)
 </string>
           </argument>
         </arguments>

@@ -62,6 +62,7 @@ log_location = 0
 pressed_back = 0
 hovertime = 0
 current_hover = noone
+init_word_highlights()
 //TEMP
 /*
 for(var yy = 0; yy &lt; 2; yy ++)
@@ -929,13 +930,19 @@ if mouse_y &lt; yy
     hovertime = 0
     current_hover = 0
 }
-else if hovertime &gt;= room_speed
+else if hovertime &gt;= room_speed and instance_exists(selected_monster)
 {
     draw_set_font(fSuperTest)
     if current_hover &lt; 4
-        draw_log_text(mouse_x,mouse_y - 25,script_execute(selected_monster.moves[current_hover],m_DESC),c_red)
+    {
+        draw_log_text(mouse_x,mouse_y - 25,script_execute(selected_monster.moves[current_hover],m_DESC),c_white)
+        //draw_text(mouse_x,mouse_y - 25,script_execute(selected_monster.moves[current_hover],m_DESC))
+    }
     else
-        draw_log_text(mouse_x,mouse_y - 25,script_execute(m_slap,m_DESC),c_red)
+    {
+        draw_log_text(mouse_x,mouse_y - 25,script_execute(m_slap,m_DESC),c_white)
+        //draw_text(mouse_x,mouse_y - 25,script_execute(m_slap,m_DESC))
+    }
     draw_set_font(fTest)
 }
 </string>
