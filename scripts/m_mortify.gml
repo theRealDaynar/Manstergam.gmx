@@ -15,6 +15,6 @@ case 3:
     return "Frightens target."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    target.frighten_level++
+    update_buffs(target,"fear",1)
     stam -=stam_cost
 }

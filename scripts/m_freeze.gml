@@ -24,5 +24,6 @@ case m_COST:return stam_cost;break;case m_EXECUTE:
         dmg = other.atk;
         event_user(0)
     }
+    
     stam -= stam_cost
 }

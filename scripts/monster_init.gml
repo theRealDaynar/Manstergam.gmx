@@ -1,5 +1,5 @@
 image_index = argument0
-var lvl = global.level;
+lvl = global.level;
 if lvl > 50
     lvl = 50
 else if lvl <= 0
@@ -335,28 +335,30 @@ pow = floor(204 * lvlsc)
 base_aegis = floor(232 * lvlsc)
 break;
 case 14:
-name = "Squidward"
-moves[0] = m_cognito_blast
-moves[1] = m_hypnosis
-moves[2] = m_water_shot
-moves[3] = m_slumber
-ds_map_add(resistances,'heat',.7)
-ds_map_add(resistances,'water',.5)
-ds_map_add(resistances,'dark',.8)
-ds_map_add(resistances,'electric',1.25)
-ds_map_add(resistances,'arcane',.5)
-ds_map_add(resistances,'bio',1.1)
-max_hp = floor(290 * (150 + 17 * lvl) / 1000)
+name = "Sleepig"
+moves[0] = m_body_slam
+moves[1] = m_tranquilize
+moves[2] = m_powder_rain
+moves[3] = m_dodge
+ds_map_add(resistances,'heat',1.25)
+ds_map_add(resistances,'dark',1.3)
+ds_map_add(buffs,'sleep',IMMUNE)
+ds_map_add(buffs,'fear',IMMUNE_SHARE)
+with(oBattleMonster)
+    if team = other.team
+        if !ds_map_exists(buffs,"fear") or ds_map_find_value(buffs,"fear") > IMMUNE_SHARE
+            ds_map_add(buffs,"fear",IMMUNE_TEMP)
+max_hp = floor(280 * (150 + 17 * lvl) / 1000)
 hp = max_hp
-max_stam = 17
+max_stam = 28
 stam = max_stam
-endurance = 2
-base_spd = floor(134 * lvlsc)
-str = floor(168 * lvlsc)
-base_def = floor(210 * lvlsc)
-dex = floor(195 * lvlsc)
-base_res = floor(210 * lvlsc)
-pow = floor(305 * lvlsc)
-base_aegis = floor(245 * lvlsc)
+endurance = 4
+base_spd = floor(186 * lvlsc)
+str = floor(145 * lvlsc)
+base_def = floor(266 * lvlsc)
+dex = floor(134 * lvlsc)
+base_res = floor(244 * lvlsc)
+pow = floor(132 * lvlsc)
+base_aegis = floor(205 * lvlsc)
 break;
 }

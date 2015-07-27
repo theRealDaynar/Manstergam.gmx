@@ -15,6 +15,6 @@ case 3:
     return "Inflicts curse on target."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    target.hex_level ++
+    update_buffs(target,"curse",1)
     stam -= stam_cost
 }

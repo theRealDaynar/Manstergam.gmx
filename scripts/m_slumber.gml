@@ -18,5 +18,6 @@ case 3:
 break;
 case m_EXECUTE:
     stam = max_stam
-    sleep_level = 1
+    update_buffs(target,"sleep",1)
+    //sleep_level = 1
 }

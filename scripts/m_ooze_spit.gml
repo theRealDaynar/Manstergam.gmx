@@ -1,6 +1,7 @@
 ///m_ooze_spit(1 - targeting type, 2 - name, 3 - description)
 var action = 0;
 var stam_cost = 4
+var atk_pwr = 7
 if argument_count != 0
     action = argument[0]
 switch(action)
@@ -15,16 +16,12 @@ case 2:
     return "Ooze Spit"
 break;
 case 3:
-    return "normalelectric earth  arcane nature --- coldbio"//"Deals dexterity based bio damage to target and lowers their speed."
+    return "Deals dexterity based bio damage to target and lowers their speed."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    with(target)
-    {
-tags = ds_list_create()
+    var tags = ds_list_create()
         ds_list_add(tags,"nature","dex","projectile")
-        dmg = 7 * other.dex;
-        event_user(0)
-        spd_mod --
-    }
+    deal_damage(target,atk_pwr * dex * lvld,tags)
+    target.spd_mod --
     stam -= stam_cost
 }

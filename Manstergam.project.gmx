@@ -139,7 +139,7 @@
     <room>rooms\rOnline</room>
     <room>rooms\rHost</room>
   </rooms>
-  <constants number="22">
+  <constants number="26">
     <constant name="INIT_CMD">0</constant>
     <constant name="MOVES_CMD">1</constant>
     <constant name="PING_CMD">2</constant>
@@ -147,6 +147,7 @@
     <constant name="res">(base_res + def_mod) * def_mod_percent</constant>
     <constant name="def">(base_def + def_mod) * def_mod_percent</constant>
     <constant name="spd">(base_spd + spd_mod) * spd_mod_percent</constant>
+    <constant name="lvld">(9 - 8 * (50-lvl)/50)</constant>
     <constant name="m_EXECUTE">0</constant>
     <constant name="m_TTYPE">1</constant>
     <constant name="m_NAME">2</constant>
@@ -162,6 +163,9 @@
     <constant name="mt_DB">4</constant>
     <constant name="mt_HEAL">5</constant>
     <constant name="mt_E">6</constant>
+    <constant name="IMMUNE_SHARE">-100</constant>
+    <constant name="IMMUNE">-99</constant>
+    <constant name="IMMUNE_TEMP">-98</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

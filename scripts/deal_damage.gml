@@ -1,10 +1,10 @@
-///deal_damage(target, amount, tags, level)
-var dmg = floor(argument1 * (9 - 8 * (50-argument3)/50))
+///deal_damage(target, amount, tags)
+var dmg = floor(argument1)
 var tags = argument2
 with(argument0)
 {
-if sleep_level >= 1
-sleep_level = 0
+if ds_map_find_value(buffs,"sleep") >= 1
+    ds_map_delete(buffs,"sleep")
 var crit = false;
 if !ds_exists(tags,ds_type_list)
         tags = ds_list_create()
@@ -24,7 +24,8 @@ else
     if active_def < 1
         active_def = 1
     dmg = dmg/active_def + 1
-    dmg *= 1 + weakness_level
+    if ds_map_exists(buffs,"weakness")
+        dmg *= 1 + buffs[? "weakness"]
     if ds_exists(resistances,ds_type_map)
         for(var i = 0; i < ds_list_size(tags);i++;)
             if ds_map_exists(resistances,ds_list_find_value(tags,i))
@@ -47,7 +48,6 @@ else
             dmg = ceil(deflect_percent * other.dmg)
             event_user(0)
         }
-    ds_list_destroy(tags)
 }
 var d_txt = instance_create(x + 100, y + 100,oDamageText);
 d_txt.txt = dmg
@@ -69,3 +69,4 @@ if instance_exists(damage_bond) and damage_bond.id != id and -1 = ds_list_find_i
 }
 if ds_exists(tags,ds_type_list)
     ds_list_destroy(tags)
+return dmg

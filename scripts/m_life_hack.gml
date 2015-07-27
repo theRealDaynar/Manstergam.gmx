@@ -19,12 +19,8 @@ case 3:
     return "Power based dark attack."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    with(target)
-    {
-tags = ds_list_create()
-        ds_list_add(tags,"dark","pow","snipe")
-        dmg = atk_pwr * other.pow;
-        event_user(0)
-    }
+    var tags = ds_list_create()
+    ds_list_add(tags,"dark","pow","snipe")
+    deal_damage(target,atk_pwr * pow * lvld,tags)
     stam -= stam_cost
 }

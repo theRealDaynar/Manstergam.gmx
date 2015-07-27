@@ -19,16 +19,11 @@ case 3:
     return "Strength earth attack."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    with(target)
-    {
-tags = ds_list_create()
-        ds_list_add(tags,"earth","str")
-        dmg = atk_pwr * other.str;
-        event_user(0)
-    }
-    tags = ds_list_create()
-        ds_list_add(tags,"earth","str")
-    dmg = atk_pwr / 2 * other.str;
-    event_user(0)
+    var tags = ds_list_create()
+    ds_list_add(tags,"earth","str")
+    deal_damage(target,atk_pwr * str * lvld,tags)
+    var tags = ds_list_create()
+    ds_list_add(tags,"earth","str")
+    deal_damage(id,atk_pwr / 2 * dex * lvld,tags)
     stam -=stam_cost
 }

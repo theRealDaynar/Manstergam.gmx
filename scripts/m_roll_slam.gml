@@ -19,45 +19,24 @@ case 3:
     return "Row targetted strength normal attack."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
+    var tags = ds_list_create()
+    ds_list_add(tags,"normal","str")
+    var dmg = atk_pwr * str * lvld;
     if team = 1
     {
         if target = oBattleController.team_2[0,0] or target = oBattleController.team_2[1,0]
         {
             if instance_exists(oBattleController.team_2[0,0])
-                with(oBattleController.team_2[0,0])
-                {
-tags = ds_list_create()
-ds_list_add(tags,"str","normal")
-                    dmg = atk_pwr * other.str;
-                    event_user(0)
-                }  
+                deal_damage(oBattleController.team_2[0,0],dmg,tags)
             if instance_exists(oBattleController.team_2[1,0])
-                with(oBattleController.team_2[1,0])
-                {
-                    tags = ds_list_create()
-ds_list_add(tags,"str","normal")
-                    dmg = atk_pwr * other.str;
-                    event_user(0)
-                }  
+                deal_damage(oBattleController.team_2[1,0],dmg,tags)
         }
         else
         {
             if instance_exists(oBattleController.team_2[0,1])
-                with(oBattleController.team_2[0,1])
-                {
-                    tags = ds_list_create()
-ds_list_add(tags,"str","normal")
-                    dmg = atk_pwr * other.str;
-                    event_user(0)
-                }  
+                deal_damage(oBattleController.team_2[0,1],dmg,tags) 
             if instance_exists(oBattleController.team_2[1,1])
-                with(oBattleController.team_2[1,1])
-                {
-                    tags = ds_list_create()
-ds_list_add(tags,"str","normal")
-                    dmg = atk_pwr * other.str;
-                    event_user(0)
-                } 
+                deal_damage(oBattleController.team_2[1,1],dmg,tags)
         }
     }
     else
@@ -65,41 +44,17 @@ ds_list_add(tags,"str","normal")
         if target = oBattleController.team_1[0,0] or target = oBattleController.team_1[1,0]
         {
             if instance_exists(oBattleController.team_1[0,0])
-                with(oBattleController.team_1[0,0])
-                {
-                    tags = ds_list_create()
-ds_list_add(tags,"str","normal")
-                    dmg = atk_pwr * other.str;
-                    event_user(0)
-                }  
+                deal_damage(oBattleController.team_1[0,0],dmg,tags)
             if instance_exists(oBattleController.team_1[1,0])
-                with(oBattleController.team_1[1,0])
-                {
-                    tags = ds_list_create()
-ds_list_add(tags,"str","normal")
-                    dmg = atk_pwr * other.str;
-                    event_user(0)
-                }  
+                deal_damage(oBattleController.team_1[1,0],dmg,tags) 
         }
         else
         {
             if instance_exists(oBattleController.team_1[0,1])
-                with(oBattleController.team_1[0,1])
-                {
-                    tags = ds_list_create()
-ds_list_add(tags,"str","normal")
-                    dmg = atk_pwr * other.str;
-                    event_user(0)
-                }  
+                deal_damage(oBattleController.team_1[0,1],dmg,tags) 
             if instance_exists(oBattleController.team_1[1,1])
-                with(oBattleController.team_1[1,1])
-                {
-                    tags = ds_list_create()
-ds_list_add(tags,"str","normal")
-                    dmg = atk_pwr * other.str;
-                    event_user(0)
-                } 
+                deal_damage(oBattleController.team_1[1,1],dmg,tags)
         }    
     }
-    stam -=stam_cost
+    stam -= stam_cost
 }

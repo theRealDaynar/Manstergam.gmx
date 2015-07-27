@@ -19,13 +19,9 @@ case 3:
     return "Bio strength attack, 1/2 disease build up."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    with(target)
-    {
-        disease_level += .5 * (1 + hex_level)
-        tags = ds_list_create()
-        ds_list_add(tags,"bio","str")
-        dmg = atk_pwr * other.str;
-        event_user(0)
-    }
+    var tags = ds_list_create()
+    ds_list_add(tags,"bio","str")
+    deal_damage(target,atk_pwr * str * lvld,tags)
+    update_buffs(target,disease_level,.5)
     stam -= stam_cost
 }

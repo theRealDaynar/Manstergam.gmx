@@ -19,12 +19,8 @@ case 3:
     return "Dexterity based nature attack."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    with(target)
-    {
-        tags = ds_list_create()
+        var tags = ds_list_create()
         ds_list_add(tags,"dex","nature")
-        dmg = atk_pwr * other.dex;
-        event_user(0)
-    }
+    deal_damage(target,atk_pwr * dex * lvld,tags)
     stam -= stam_cost
 }

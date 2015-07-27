@@ -542,37 +542,37 @@ draw_healthbar(x,y + 200 - 14,x + 200 /*- 17*/,y + 200 - 10 - 2,drawn_stam/max_s
 
 //draw status effects
 var i = 0;
-if bleed_level &gt;= 1
+if buffs[? "bleed"] &gt;= 1
 {
     draw_sprite(sStatusEffectIcon,0,x + i * 20,y + 200 - 34)
     i++
 }
-if poisoned &gt;= 1
+if buffs[? "poison"] &gt;= 1
 {
     draw_sprite(sStatusEffectIcon,1,x + i * 20,y + 200 - 34)
     i++
 }
-if disease_level &gt;= 1
+if buffs[? "disease"] &gt;= 1
 {
     draw_sprite(sStatusEffectIcon,2,x + i * 20,y + 200 - 34)
     i++
 }
-if sleep_level &gt;= 1
+if buffs[? "sleep"] &gt;= 1
 {
     draw_sprite(sStatusEffectIcon,3,x + i * 20,y + 200 - 34)
     i++
 }
-if hex_level &gt;= 1
+if buffs[? "curse"] &gt;= 1
 {
     draw_sprite(sStatusEffectIcon,4,x + i * 20,y + 200 - 34)
     i++
 }
-if frighten_level &gt;= 1
+if buffs[? "fear"] &gt;= 1
 {
     draw_sprite(sStatusEffectIcon,5,x + i * 20,y + 200 - 34)
     i++
 }
-if weakness_level &gt;= 1
+if buffs[? "weakness"] &gt;= 1
 {
     draw_sprite(sStatusEffectIcon,6,x + i * 20,y + 200 - 34)
     i++

@@ -18,6 +18,7 @@ case 3:
     return "Inflicts bleeding on target."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    target.bleed_level += (1 + hex_level)
+    //target.bleed_level += (1 + hex_level)
+    update_buffs(target,"bleed",1)
     stam -= stam_cost
 }

@@ -387,7 +387,7 @@ with(oBattleMonster)
 {
     if stam &lt; 0
         stam = 0
-    if bleed_level &lt; 1
+    if !ds_map_exists(buffs,"bleed") or real(ds_map_find_value(buffs,"bleed")) &lt; 1
     {
         stam += round(endurance * (1 + random(.5)-.25))
         if stam &gt; max_stam
@@ -395,17 +395,18 @@ with(oBattleMonster)
     }
     else
     {
+        update_buffs(id,"bleed",-.5)
         bleed_level -= .5
         ds_list_insert(other.combat_log,0,name + " is bleeding")
     }
-    if poisoned &gt;= 1
+    if ds_map_exists(buffs,"poison") and ds_map_find_value(buffs,"poison") &gt;= 1
     {
         tags = ds_list_create()
         ds_list_add(tags,"poison")
         dmg = 3
         event_user(0)
     }
-    if disease_level &gt;= 1
+    if ds_map_exists(buffs,"disease") and ds_map_find_value(buffs,"disease") &gt;= 1
     {
         tags = ds_list_create()
         ds_list_add(tags,"disease")

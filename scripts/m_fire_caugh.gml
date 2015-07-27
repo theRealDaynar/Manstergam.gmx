@@ -19,12 +19,8 @@ case 3:
     return "Deals dexterity based heat damage."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    with(target)
-    {
-        tags = ds_list_create()
-ds_list_add(tags,"heat","dex")
-        dmg = atk_pwr * other.dex;
-        event_user(0)
-    }
+    var tags = ds_list_create()
+    ds_list_add(tags,"heat","dex")
+    deal_damage(target,atk_pwr * dex * lvld,tags)
     stam -= stam_cost
 }

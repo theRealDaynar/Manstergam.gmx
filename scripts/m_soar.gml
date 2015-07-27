@@ -1,6 +1,7 @@
 ///m_soar()
 var action = 0;
 var stam_cost =5
+var atk_pwr = 7
 if argument_count != 0
     action = argument[0]
 switch(action)
@@ -29,12 +30,8 @@ case m_COST:return stam_cost;break;case m_EXECUTE:
         ability_lock = 0
         image_alpha = 1
         area = 0
-        with(target)
-        {
-            tags = ds_list_create()
+            var tags = ds_list_create()
             ds_list_add(tags,"wind","str")
-            dmg = 7 * other.str;
-            event_user(0)
-        }
+        deal_damage(target,atk_pwr * str * lvld,tags)
     }
 }

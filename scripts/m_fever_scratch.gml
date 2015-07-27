@@ -19,13 +19,9 @@ case 3:
     return "Deals minor strength bio damage, 1/2 fever build up."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    with(target)
-    {
-weakness_level += .2
-tags = ds_list_create()
-ds_list_add(tags,"bio","str")
-        dmg = atk_pwr * other.str;
-        event_user(0)
-    }
+    var tags = ds_list_create()
+    ds_list_add(tags,"bio","str")
+    deal_damage(target,atk_pwr * str * lvld,tags)
+    update_buffs(target,"fever",.2)
     stam -= stam_cost
 }

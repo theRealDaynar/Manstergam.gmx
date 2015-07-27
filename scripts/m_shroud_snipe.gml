@@ -19,12 +19,8 @@ case 3:
     return "Strength based dark damage, cannot miss."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    with(target)
-    {
-tags = ds_list_create()
+var tags = ds_list_create()
         ds_list_add(tags,"dark","str","snipe")
-        dmg = atk_pwr * other.str;
-        event_user(0)
-    }
+    deal_damage(target,atk_pwr * str * lvld, tags)
     stam -= stam_cost 
 }

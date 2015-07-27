@@ -19,13 +19,9 @@ case 3:
     return "Deals moderate dexterity based bio damage and lowers targets defenses."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    with(target)
-    {
-        tags = ds_list_create()
-        ds_list_add(tags,"bio","dex","projectile")
-        dmg = atk_pwr * other.dex;
-        update_defense(id,-1)
-        event_user(0)
-    }
+    var tags = ds_list_create()
+    ds_list_add(tags,"bio","dex","projectile")
+    deal_damage(target,atk_pwr * dex * lvld,tags)
+    update_defense(target,-1)
     stam -= stam_cost
 }

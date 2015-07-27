@@ -19,17 +19,12 @@ case 3:
     return "Dexterity based attack, heals based on damage dealt."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    with(target)
-    {
-tags = ds_list_create()
-        ds_list_add(tags,"bio","dex")
-        dmg = atk_pwr * other.dex;
-        var heal_multi = 1;
-        if bleed_level >= 1
-            heal_multi ++
-        var heal = ceil(dmg * .5 * heal_multi)
-        heal_monster(other.id,heal)
-        event_user(0)  
-    }
+    var tags = ds_list_create()
+    ds_list_add(tags,"bio","dex")
+    var dmg = deal_damage(target,atk_pwr * dex * lvld,tags)
+    var heal_multi = 1;
+    if ds_map_find_value(buffs,"bleed") >= 1
+        heal_multi ++
+    heal_monster(id,ceil(dmg * .5 * heal_multi))
     stam -= stam_cost
 }

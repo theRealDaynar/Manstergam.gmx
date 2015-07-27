@@ -18,11 +18,7 @@ case 3:
     return "Low base damage normal type attack. Scales with your lowest attack stat."
 break;
 case m_EXECUTE:
-    with(target)
-    {
-        tags = ds_list_create()
-        ds_list_add(tags,"str")
-        dmg = atk_pwr * other.str;
-        event_user(0)
-    }
+    var tags = ds_list_create()
+    ds_list_add(tags,"str")
+    deal_damage(target,atk_pwr * str * lvld,tags)
 }

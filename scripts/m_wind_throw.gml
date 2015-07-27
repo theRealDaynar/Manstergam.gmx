@@ -19,12 +19,8 @@ case 3:
     return "Highly varied power based wind attack."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    with(target)
-    {
-        tags = ds_list_create()
+        var tags = ds_list_create()
         ds_list_add(tags,"wind","pow","projectile")
-        dmg = atk_pwr * other.pow * (.3 + random(1.4));
-        event_user(0)
-    }
+     deal_damage(target,atk_pwr * pow * lvld * (.3 + random(1.4)),tags)
     stam -= stam_cost
 }

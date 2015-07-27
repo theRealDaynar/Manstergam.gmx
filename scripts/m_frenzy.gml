@@ -19,12 +19,8 @@ case m_DESC:
     return "Triple target dark attack, increases in damage with each use."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    with(target)
-    {
-        tags = ds_list_create()
-        ds_list_add(tags,"dark","str")
-        dmg = (atk_pwr + floor(other.move_uses[other.selected_move]/3)) * other.dex;
-        event_user(0)
-    }
+    var tags = ds_list_create()
+    ds_list_add(tags,"dark","str")
+    deal_damage(target,(atk_pwr + floor(move_uses[selected_move]/3)) * dex * lvld,tags )
     stam -= stam_cost/3
 }

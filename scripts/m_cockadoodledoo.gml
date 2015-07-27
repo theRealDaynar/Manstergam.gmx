@@ -15,6 +15,6 @@ case 3:
     return "Damages target stamina."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    target.stam -= atk * 5;
+    target.stam -= pow * 5;
     stam -= stam_cost
 }
