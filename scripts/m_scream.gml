@@ -25,7 +25,7 @@ case m_COST:return stam_cost;break;case m_EXECUTE:
         {
             var tags = ds_list_create()
             ds_list_add(tags,"normal","dex",)
-            deal_damage(id,other.atk_pwr * other.dex * lvlda,tags)
+            deal_damage(id,atk_pwr * other.dex * lvlda,tags)
         }
     stam -= stam_cost
 }
