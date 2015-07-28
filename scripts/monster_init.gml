@@ -335,6 +335,29 @@ pow = floor(204 * lvlsc)
 base_aegis = floor(232 * lvlsc)
 break;
 case 14:
+name = "Squidward"
+moves[0] = m_cognito_blast
+moves[1] = m_hypnosis
+moves[2] = m_water_shot
+moves[3] = m_slumber
+ds_map_add(resistances,'heat',.7)
+ds_map_add(resistances,'water',.5)
+ds_map_add(resistances,'dark',.8)
+ds_map_add(resistances,'electric',1.25)
+ds_map_add(resistances,'arcane',.5)
+ds_map_add(resistances,'bio',1.1)
+max_hp = floor(290 * (150 + 17 * lvl) / 1000)
+max_stam = 17
+endurance = 2
+base_spd = floor(134 * lvlsc)
+str = floor(168 * lvlsc)
+base_def = floor(210 * lvlsc)
+dex = floor(195 * lvlsc)
+base_res = floor(210 * lvlsc)
+pow = floor(305 * lvlsc)
+base_aegis = floor(245 * lvlsc)
+break;
+case 15:
 name = "Sleepig"
 moves[0] = m_body_slam
 moves[1] = m_tranquilize
