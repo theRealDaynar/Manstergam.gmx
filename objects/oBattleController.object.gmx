@@ -413,6 +413,14 @@ with(oBattleMonster)
         dmg = 6
         event_user(0)
     }
+    if ds_map_exists(buffs,"immune") and ds_map_find_value(buffs,"immune") &gt;= 1
+    {
+        var value = ds_map_find_value(buffs,"immune") - 1
+        if value &gt; 0
+            ds_map_add(buffs,"immune",value)
+        else
+            ds_map_delete(buffs,"immune")
+    }
     script_execute(moves[selected_move],m_END_ACTION)
     attack_streak = 0
     if dodge_timer &gt; 0

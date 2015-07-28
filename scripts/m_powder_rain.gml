@@ -9,7 +9,7 @@ case m_PRIORITY:
     return 1;
 break;
 case 1:
-    return 0;
+    return 4;
 break;
 case 2:
     return "Powder Rain"

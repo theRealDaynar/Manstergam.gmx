@@ -359,7 +359,7 @@ base_aegis = floor(245 * lvlsc)
 break;
 case 15:
 name = "Sleepig"
-moves[0] = m_body_slam
+moves[0] = m_veil_gas
 moves[1] = m_tranquilize
 moves[2] = m_powder_rain
 moves[3] = m_dodge

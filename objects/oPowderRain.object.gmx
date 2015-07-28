@@ -76,7 +76,7 @@ ds_list_insert(oBattleController.combat_log,0,"Powder begins falling from the sk
 sleep_countdown--
 if sleep_countdown &lt;= 0
 with(oBattleMonster)
-    sleep_level++
+    update_buffs(id,"sleep",1)
 instance_destroy()
 oBattleController.weather = noone
 </string>

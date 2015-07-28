@@ -36,6 +36,7 @@
       <script>scripts\m_blood_bite.gml</script>
       <script>scripts\m_body_slam.gml</script>
       <script>scripts\m_break.gml</script>
+      <script>scripts\m_veil_gas.gml</script>
       <script>scripts\m_burning_roll.gml</script>
       <script>scripts\m_chain_whack.gml</script>
       <script>scripts\m_cockadoodledoo.gml</script>

@@ -22,5 +22,6 @@ case m_DESC:
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     dodge_timer = 2
+cd[selected_move] = 1
 stam -= stam_cost
 }
