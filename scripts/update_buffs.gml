@@ -34,9 +34,19 @@ if ds_map_exists(m,"curse") and argument2 > 0
     multi += ds_map_find_value(m,"curse")
 if ds_map_exists(m,argument1)
 {
+    
     if ds_map_find_value(m,argument1) > IMMUNE_TEMP
-        ds_map_add(m,argument1,argument2 * multi + ds_map_find_value(m,argument1))
+    {
+        var new_value = argument2 * multi + ds_map_find_value(m,argument1)
+        ds_map_delete(m,argument1)
+        ds_map_add(m,argument1,new_value)
+    }
+    else
+        ds_list_insert(oBattleController.combat_log,0,"[c="+string(argument0.name_color)+"]" + argument0.name + "is immune.")
+    show_debug_message(name + " " + argument1 + " " + string(argument2) + " " + string(m[? argument1]))
 }
 else
     ds_map_add(m,argument1,argument2 * multi)
 }
+else
+    ds_list_insert(oBattleController.combat_log,0,"[c="+string(argument0.name_color)+"]" + argument0.name + "is immune.")

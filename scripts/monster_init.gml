@@ -347,6 +347,7 @@ ds_map_add(resistances,'electric',1.25)
 ds_map_add(resistances,'arcane',.5)
 ds_map_add(resistances,'bio',1.1)
 max_hp = floor(290 * (150 + 17 * lvl) / 1000)
+hp = max_hp
 max_stam = 17
 endurance = 2
 base_spd = floor(134 * lvlsc)

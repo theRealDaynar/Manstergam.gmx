@@ -22,6 +22,6 @@ case m_COST:return stam_cost;break;case m_EXECUTE:
     var tags = ds_list_create()
     ds_list_add(tags,"bio","str")
     deal_damage(target,atk_pwr * str * lvld,tags)
-    update_buffs(target,disease_level,.5)
+    update_buffs(target,"disease",.5)
     stam -= stam_cost
 }

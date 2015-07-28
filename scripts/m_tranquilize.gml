@@ -18,7 +18,6 @@ case 3:
     return "1/2 sleep build up on target."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
-    //target.sleep_level += .5 * (1 + hex_level)
     update_buffs(target,"sleep",.5)
     stam -= stam_cost
 }

@@ -318,7 +318,7 @@ with(oBattleController)
             selected_monster.has_selected_move = 1
             var o_selected_monster = selected_monster;
             for(var i = 0; i &lt; 4; i++)
-                if instance_exists(team_1[i % 2,i div 2]) and team_1[i % 2,i div 2].has_selected_move = 0 and !team_1[i % 2,i div 2].ability_lock and team_1[i % 2,i div 2].sleep_level &lt; 1
+                if instance_exists(team_1[i % 2,i div 2]) and team_1[i % 2,i div 2].has_selected_move = 0 and !team_1[i % 2,i div 2].ability_lock and (!ds_map_exists(team_1[i % 2,i div 2].buffs,"sleep") or ds_map_find_value(team_1[i % 2,i div 2].buffs,"sleep") &lt; 1)
                 {
                     selected_monster = team_1[(i) % 2,(i) div 2]
                     break;
@@ -400,8 +400,8 @@ with(oBattleController)
             <kind>1</kind>
             <string>///take damage
 dmg = floor(dmg * (9 - 8 * (50-global.level)/50))
-if sleep_level &gt;= 1
-sleep_level = 0
+if ds_map_exists(buffs,"sleep") and ds_map_find_value(buffs,"sleep") &gt;= 1
+    ds_map_delete(buffs,"sleep")
 var crit = false;
 if !ds_exists(tags,ds_type_list)
         tags = ds_list_create()
@@ -409,8 +409,6 @@ if (area != 0 or dodge_timer &gt; 0) //or tag = "poison"
    dmg = 0
 else
 {
-    if sleep_level &gt;= 1
-        sleep_level = 0
     var active_def = 0;
     if  - 1 != ds_list_find_index(tags,"str")
         active_def = def;

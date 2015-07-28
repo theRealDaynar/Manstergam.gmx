@@ -516,7 +516,7 @@ stage = 2
 selected_monster = noone
     with(oBattleMonster)
     {
-        if sleep_level &lt; 1
+        if (!ds_map_exists(buffs,"sleep") or ds_map_find_value(buffs,"sleep") &lt; 1)
         {
         script_execute(moves[selected_move],m_IMI_ACTION)
         var placed = 0;
@@ -583,7 +583,7 @@ selected_monster = noone
 with(oBattleMonster)
     has_selected_move = 0
 for(var i = 0; i &lt; 4; i++)
-if instance_exists(team_1[i % 2,i div 2]) and !team_1[i % 2,i div 2].ability_lock and team_1[i % 2,i div 2].sleep_level &lt; 1
+if instance_exists(team_1[i % 2,i div 2]) and !team_1[i % 2,i div 2].ability_lock and (!ds_map_exists(team_1[i % 2,i div 2].buffs,"sleep") or ds_map_find_value(team_1[i % 2,i div 2].buffs,"sleep") &lt; 1)
 {
     selected_monster = team_1[i % 2,i div 2]
     first_monster = selected_monster
@@ -709,7 +709,7 @@ if selected_monster.action_state = 1 or selected_monster != first_monster
             }
             else
                 for(var ii = 2; ii &gt;= 0; ii--)
-                    if instance_exists(team_1[(ii) % 2,(ii) div 2]) and team_1[ii % 2,ii div 2].has_selected_move and !team_1[(ii) % 2,(ii) div 2].ability_lock and team_1[(ii) % 2,(ii) div 2].sleep_level &lt; 1
+                    if instance_exists(team_1[(ii) % 2,(ii) div 2]) and team_1[ii % 2,ii div 2].has_selected_move and !team_1[(ii) % 2,(ii) div 2].ability_lock and (!ds_map_exists(team_1[ii % 2,ii div 2].buffs,"sleep") or ds_map_find_value(team_1[ii % 2,ii div 2].buffs,"sleep") &lt; 1)
                     {
                         selected_monster = team_1[(ii) % 2,(ii) div 2]
                         if ds_exists(selected_monster.target_que,ds_type_queue)
@@ -777,7 +777,7 @@ if selected_monster.action_state = 0
                             selected_monster.action_state = 0
                             var o_selected_monster = selected_monster;
                             for(var ii = 0; ii &lt; 4; ii++)
-                                if instance_exists(team_1[(ii) % 2,(ii) div 2]) and !team_1[ii % 2,ii div 2].has_selected_move and !team_1[(ii) % 2,(ii) div 2].ability_lock and team_1[(ii) % 2,(ii) div 2].sleep_level &lt; 1
+                                if instance_exists(team_1[(ii) % 2,(ii) div 2]) and !team_1[ii % 2,ii div 2].has_selected_move and !team_1[(ii) % 2,(ii) div 2].ability_lock and (!ds_map_exists(team_1[ii % 2,ii div 2].buffs,"sleep") or ds_map_find_value(team_1[ii % 2,ii div 2].buffs,"sleep") &lt; 1)
                                 {
                                     selected_monster = team_1[(ii) % 2,(ii) div 2]
                                     break;
@@ -825,7 +825,7 @@ if selected_monster.action_state = 0
                             selected_monster.action_state = 0
                             var o_selected_monster = selected_monster;
                             for(var ii = 0; ii &lt; 4; ii++)
-                                if instance_exists(team_1[(ii) % 2,(ii) div 2]) and !team_1[ii % 2,ii div 2].has_selected_move and !team_1[(ii) % 2,(ii) div 2].ability_lock and team_1[(ii) % 2,(ii) div 2].sleep_level &lt; 1
+                                if instance_exists(team_1[(ii) % 2,(ii) div 2]) and !team_1[ii % 2,ii div 2].has_selected_move and !team_1[(ii) % 2,(ii) div 2].ability_lock and (!ds_map_exists(team_1[ii % 2,ii div 2].buffs,"sleep") or ds_map_find_value(team_1[ii % 2,ii div 2].buffs,"sleep") &lt; 1)
                                 {
                                     selected_monster = team_1[ii % 2,ii div 2]
                                     break;
@@ -876,7 +876,7 @@ if selected_monster.action_state = 0
                             selected_monster.action_state = 0
                             var o_selected_monster = selected_monster;
                             for(var ii = 0; ii &lt; 4; ii++)
-                                if instance_exists(team_1[(ii) % 2,(ii) div 2]) and !team_1[ii % 2,ii div 2].has_selected_move and !team_1[(ii) % 2,(ii) div 2].ability_lock and team_1[(ii) % 2,(ii) div 2].sleep_level &lt; 1
+                                if instance_exists(team_1[(ii) % 2,(ii) div 2]) and !team_1[ii % 2,ii div 2].has_selected_move and !team_1[(ii) % 2,(ii) div 2].ability_lock and (!ds_map_exists(team_1[ii % 2,ii div 2].buffs,"sleep") or ds_map_find_value(team_1[ii % 2,ii div 2].buffs,"sleep") &lt; 1)
                                 {
                                     selected_monster = team_1[ii % 2,ii div 2]
                                     break;

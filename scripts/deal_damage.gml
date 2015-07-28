@@ -3,7 +3,7 @@ var dmg = floor(argument1)
 var tags = argument2
 with(argument0)
 {
-if ds_map_find_value(buffs,"sleep") >= 1
+if ds_map_exists(buffs,"sleep") and ds_map_find_value(buffs,"sleep") >= 1
     ds_map_delete(buffs,"sleep")
 var crit = false;
 if !ds_exists(tags,ds_type_list)
@@ -12,8 +12,6 @@ if (area != 0 or dodge_timer > 0) //or tag = "poison"
    dmg = 0
 else
 {
-    if sleep_level >= 1
-        sleep_level = 0
     var active_def = 0;
     if  - 1 != ds_list_find_index(tags,"str")
         active_def = def;
