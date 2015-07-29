@@ -372,6 +372,15 @@ with(oBattleMonster)
     if team = other.team
         if !ds_map_exists(buffs,"fear") or ds_map_find_value(buffs,"fear") > IMMUNE_SHARE
             ds_map_add(buffs,"fear",IMMUNE_TEMP)
+case 16:
+name = "Glitchghost"
+moves[0] = m_life_hack
+moves[1] = m_shock
+moves[2] = m_freeze
+moves[3] = m_killscreen
+ds_map_add(resistances,'normal',.50)
+ds_map_add(resistances,'arcane',1.50)
+ds_map_add(resistances,'bio',0)
 max_hp = floor(280 * (150 + 17 * lvl) / 1000)
 hp = max_hp
 max_stam = 28
