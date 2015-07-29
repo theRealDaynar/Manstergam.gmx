@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if tile_map[# floor(bbox_left/32),floor(bbox_top/32)] = 1 or tile_map[# floor(bbox_right/32),floor(bbox_top/32)] = 1 or tile_map[# floor(bbox_left/32),floor(bbox_bottom/32)] = 1 or tile_map[# floor(bbox_right/32),floor(bbox_bottom/32)] = 1
+            <string>if tile_map[# floor(bbox_left/64),floor(bbox_top/64)] = 1 or tile_map[# floor(bbox_right/64),floor(bbox_top/64)] = 1 or tile_map[# floor(bbox_left/64),floor(bbox_bottom/64)] = 1 or tile_map[# floor(bbox_right/64),floor(bbox_bottom/64)] = 1
 {
     var xx = x
     var true_xx = xx
@@ -33,9 +33,9 @@
     if x &gt; xprevious
     {
         y = yprevious
-        if tile_map[# floor(bbox_right/32),floor(bbox_top/32)] = 1 or tile_map[# floor(bbox_right/32),floor(bbox_bottom/32)] = 1
+        if tile_map[# floor(bbox_right/64),floor(bbox_top/64)] = 1 or tile_map[# floor(bbox_right/64),floor(bbox_bottom/64)] = 1
         {
-            x = (x &amp;$ffffffe0) + 16;
+            x = (x &amp;$ffffffc0) + 32;
             xx = x
         }
         y = yy
@@ -43,9 +43,9 @@
     else if x &lt; xprevious
     {
         y = yprevious
-        if tile_map[# floor(bbox_left/32),floor(bbox_top/32)] = 1 or tile_map[# floor(bbox_left/32),floor(bbox_bottom/32)] = 1
+        if tile_map[# floor(bbox_left/64),floor(bbox_top/64)] = 1 or tile_map[# floor(bbox_left/64),floor(bbox_bottom/64)] = 1
         {
-            x = (x &amp;$ffffffe0) + 16;
+            x = (x &amp;$ffffffc0) + 32;
             xx = x
         }
         y = yy
@@ -53,21 +53,21 @@
     if y &gt; yprevious
     {
         x = xprevious
-        if tile_map[# floor(bbox_right/32),floor(bbox_bottom/32)] = 1 or tile_map[# floor(bbox_left/32),floor(bbox_bottom/32)] = 1
-            y = (y &amp;$ffffffe0) + 16;
+        if tile_map[# floor(bbox_right/64),floor(bbox_bottom/64)] = 1 or tile_map[# floor(bbox_left/64),floor(bbox_bottom/64)] = 1
+            y = (y &amp;$ffffffc0) + 32;
         x = xx
     }
     else if y &lt; yprevious
     {
         x = xprevious
-        if tile_map[# floor(bbox_right/32),floor(bbox_top/32)] = 1 or tile_map[# floor(bbox_left/32),floor(bbox_top/32)] = 1
-            y = (y &amp;$ffffffe0) + 16;
+        if tile_map[# floor(bbox_right/64),floor(bbox_top/64)] = 1 or tile_map[# floor(bbox_left/64),floor(bbox_top/64)] = 1
+            y = (y &amp;$ffffffc0) + 32;
         x = xx
     }
     if x = true_xx and y = yy
     {
-        y = (y &amp;$ffffffe0) + 16;
-        x = (x &amp;$ffffffe0) + 16;
+        y = (y &amp;$ffffffc0) + 32;
+        x = (x &amp;$ffffffc0) + 32;
     }
     speed = 0
 }
@@ -125,7 +125,7 @@ else
 for(var xx = 0; xx &lt; ds_grid_width(tile_map);xx++)
     for(var yy = 0; yy &lt; ds_grid_height(tile_map);yy++)
         if tile_map[# xx, yy]
-            draw_rectangle(xx*32,yy*32,(xx+1)*32,(yy+1)*32,false)
+            draw_rectangle(xx*64,yy*64,(xx+1)*64,(yy+1)*64,false)
 //number based tile indiactor
 /*
 for(var xx = 0; xx &lt; ds_grid_width(tile_map);xx++)
