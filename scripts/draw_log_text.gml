@@ -57,7 +57,7 @@ draw_set_halign(fa_left)
         pos = string_pos('[/c]',str)
         //if no end tag all the text will be colored
         if pos <= 0
-            pos = string_length(str)
+            pos = string_length(str) + 1
         for(var i = 1; i < pos; i++)
             sub_str += string_char_at(str,i)
         str = string_delete(str,1,pos+3)

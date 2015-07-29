@@ -62,7 +62,6 @@ log_location = 0
 pressed_back = 0
 hovertime = 0
 current_hover = noone
-init_word_highlights()
 //TEMP
 /*
 for(var yy = 0; yy &lt; 2; yy ++)

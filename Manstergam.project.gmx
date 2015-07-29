@@ -18,7 +18,9 @@
     <sprite>sprites\sBackButton</sprite>
     <sprite>sprites\sPlayer</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\tileset</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Netcode">
@@ -141,6 +143,7 @@
       <object>objects\oServer</object>
     </objects>
     <object>objects\oPlayer</object>
+    <object>objects\oSign</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rMenu</room>
