@@ -28,6 +28,7 @@
             <string>txt = "[c=rainbow]MEMES"
 image_blend = make_color_rgb(150,121,90)
 back_col = make_color_rgb(128,103,77)
+yy = room_height
 </string>
           </argument>
         </arguments>
@@ -51,7 +52,13 @@ back_col = make_color_rgb(128,103,77)
           <argument>
             <kind>1</kind>
             <string>if floor(oPlayer.x/64) = floor(x/64) and floor(oPlayer.y/64) = floor(y/64) + 1
+{
     visible = true
+    if yy &gt; room_height*5/6+3 - 20
+        yy -= 5
+}
+else if yy - 20 &lt; room_height
+    yy += 3
 else
     visible = false
 </string>
@@ -76,12 +83,12 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_rectangle_colour(room_width*14/30,room_height*5/6+3 - 20,room_width*16/30,room_height,back_col,back_col,back_col,back_col,0)
-draw_roundrect_colour(room_width/3,room_height*5/6 - 20,room_width*2/3,room_height - 20,back_col,back_col,0)
-draw_roundrect_colour(room_width/3+3,room_height*5/6+3 - 20,room_width*2/3-3,room_height-3 - 20,image_blend,image_blend,0)
+            <string>draw_rectangle_colour(room_width*14/30,yy+3 - 20,room_width*16/30,room_height,back_col,back_col,back_col,back_col,0)
+draw_roundrect_colour(room_width/3,yy - 20,room_width*2/3,yy + room_height/6 - 20,back_col,back_col,0)
+draw_roundrect_colour(room_width/3+3,yy+3 - 20,room_width*2/3-3,yy + room_height/6-3 - 20,image_blend,image_blend,0)
 draw_set_halign(fa_center)
 draw_set_valign(fa_center)
-draw_log_text(room_width/2,room_height*11/12 - 20,txt,c_white)
+draw_log_text(room_width/2,yy + room_height/12 - 20,txt,c_white)
 </string>
           </argument>
         </arguments>
