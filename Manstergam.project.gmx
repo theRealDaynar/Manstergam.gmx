@@ -16,6 +16,7 @@
     <sprite>sprites\sHealthUp</sprite>
     <sprite>sprites\sBloodSplatter</sprite>
     <sprite>sprites\sBackButton</sprite>
+    <sprite>sprites\sPlayer</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -120,22 +121,30 @@
     <font>fonts\fSuperTest</font>
   </fonts>
   <objects name="objects">
-    <object>objects\oBattleMonster</object>
-    <object>objects\oTextBox</object>
-    <object>objects\oBattleController</object>
-    <object>objects\oDamageText</object>
-    <object>objects\oSelectedTeam</object>
-    <object>objects\oPlayButton</object>
-    <object>objects\oBtnOnline</object>
-    <object>objects\oBtnHost</object>
-    <object>objects\oManSelector</object>
-    <object>objects\oServer</object>
-    <object>objects\oSSClient</object>
-    <object>objects\oClient</object>
-    <object>objects\oPowderRain</object>
+    <objects name="BattleSystem">
+      <object>objects\oBattleController</object>
+      <object>objects\oBattleMonster</object>
+      <object>objects\oPowderRain</object>
+      <object>objects\oSelectedTeam</object>
+      <object>objects\oDamageText</object>
+    </objects>
+    <objects name="Temp Selection">
+      <object>objects\oTextBox</object>
+      <object>objects\oBtnOnline</object>
+      <object>objects\oPlayButton</object>
+      <object>objects\oManSelector</object>
+      <object>objects\oBtnHost</object>
+    </objects>
+    <objects name="Networking">
+      <object>objects\oSSClient</object>
+      <object>objects\oClient</object>
+      <object>objects\oServer</object>
+    </objects>
+    <object>objects\oPlayer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rMenu</room>
+    <room>rooms\rOverworld</room>
     <room>rooms\rBattle</room>
     <room>rooms\rOnline</room>
     <room>rooms\rHost</room>
