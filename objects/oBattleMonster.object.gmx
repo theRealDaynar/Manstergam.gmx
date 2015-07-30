@@ -68,7 +68,7 @@ num_moves = 4
 for(var i = 0; i &lt; 5; i++)
 {
 cd[i] = 0
-moves[i] = irandom(37)
+moves[i] = m_slap
 move_uses[i] = 0
 }
 moves[4] = m_slap

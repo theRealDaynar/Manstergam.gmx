@@ -18,6 +18,8 @@
     <sprite>sprites\sBackButton</sprite>
     <sprite>sprites\sPlayer</sprite>
     <sprite>sprites\sNPC</sprite>
+    <sprite>sprites\sCone</sprite>
+    <sprite>sprites\sIlerminerty</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tileset</background>
@@ -146,7 +148,9 @@
     <object>objects\oPlayer</object>
     <object>objects\oSign</object>
     <object>objects\oNPC</object>
+    <object>objects\oBattleNPC</object>
     <object>objects\oMovingObject</object>
+    <object>objects\oOverworldObject</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rMenu</room>
