@@ -178,7 +178,7 @@ image_yscale = 5
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="79">
+    <event eventtype="9" enumb="33">
       <action>
         <libid>1</libid>
         <id>603</id>

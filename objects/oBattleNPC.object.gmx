@@ -86,7 +86,7 @@ show_dialog = 0
         alarm[0] = room_speed
     }
 }
-rot += 360 / (room_speed / 3)
+rot += 360 / (room_speed / 2)
 </string>
           </argument>
         </arguments>
