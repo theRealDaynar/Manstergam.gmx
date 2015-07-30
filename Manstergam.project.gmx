@@ -17,6 +17,7 @@
     <sprite>sprites\sBloodSplatter</sprite>
     <sprite>sprites\sBackButton</sprite>
     <sprite>sprites\sPlayer</sprite>
+    <sprite>sprites\sNPC</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tileset</background>
@@ -144,6 +145,8 @@
     </objects>
     <object>objects\oPlayer</object>
     <object>objects\oSign</object>
+    <object>objects\oNPC</object>
+    <object>objects\oMovingObject</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rMenu</room>

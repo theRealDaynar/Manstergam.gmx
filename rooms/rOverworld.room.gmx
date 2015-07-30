@@ -3,8 +3,8 @@
   <caption></caption>
   <width>1136</width>
   <height>640</height>
-  <vsnap>64</vsnap>
-  <hsnap>64</hsnap>
+  <vsnap>32</vsnap>
+  <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -14,7 +14,9 @@
 var wcells = ceil(room_width/cell_size)
 var hcells = floor(room_height/cell_size)
 globalvar tile_map;
+globalvar path_grid;
 tile_map = ds_grid_create(wcells,hcells)
+path_grid = mp_grid_create(0, 0, wcells, hcells, cell_size, cell_size)
 for(var xx = 0;xx &lt; wcells;xx++)
     for(var yy = 0;yy &lt; hcells;yy++)
     {
@@ -22,7 +24,8 @@ for(var xx = 0;xx &lt; wcells;xx++)
         var xtile = tile_get_left(tile)
         if xtile &gt;=64 and xtile &lt;= 128
         {
-            tile_map[# xx,yy] =1
+            tile_map[# xx,yy] = 1
+            mp_grid_add_cell(path_grid,xx,yy)
             if xtile = 128
                 instance_create(xx * 64,yy * 64,oSign)
         }
@@ -68,6 +71,7 @@ for(var xx = 0;xx &lt; wcells;xx++)
   </views>
   <instances>
     <instance objName="oPlayer" x="256" y="288" name="inst_06E0C859" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oNPC" x="736" y="480" name="inst_E037D872" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileset" x="0" y="0" w="64" h="64" xo="64" yo="0" id="10000006" name="inst_B72BD0C8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
