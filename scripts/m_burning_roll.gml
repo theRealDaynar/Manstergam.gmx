@@ -20,7 +20,9 @@ case 3:
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     var tags = ds_list_create()
+    var tags2 = ds_list_create()
     ds_list_add(tags,"heat","str")
+    ds_list_copy(tags2,tags)
     var dmg = atk_pwr * str * lvld;
     if team = 1
     {
@@ -29,14 +31,14 @@ case m_COST:return stam_cost;break;case m_EXECUTE:
             if instance_exists(oBattleController.team_2[0,0])
                 deal_damage(oBattleController.team_2[0,0],dmg,tags)
             if instance_exists(oBattleController.team_2[1,0])
-                deal_damage(oBattleController.team_2[1,0],dmg,tags)
+                deal_damage(oBattleController.team_2[1,0],dmg,tags2)
         }
         else
         {
             if instance_exists(oBattleController.team_2[0,1])
                 deal_damage(oBattleController.team_2[0,1],dmg,tags) 
             if instance_exists(oBattleController.team_2[1,1])
-                deal_damage(oBattleController.team_2[1,1],dmg,tags)
+                deal_damage(oBattleController.team_2[1,1],dmg,tags2)
         }
     }
     else
@@ -46,14 +48,14 @@ case m_COST:return stam_cost;break;case m_EXECUTE:
             if instance_exists(oBattleController.team_1[0,0])
                 deal_damage(oBattleController.team_1[0,0],dmg,tags)
             if instance_exists(oBattleController.team_1[1,0])
-                deal_damage(oBattleController.team_1[1,0],dmg,tags) 
+                deal_damage(oBattleController.team_1[1,0],dmg,tags2) 
         }
         else
         {
             if instance_exists(oBattleController.team_1[0,1])
                 deal_damage(oBattleController.team_1[0,1],dmg,tags) 
             if instance_exists(oBattleController.team_1[1,1])
-                deal_damage(oBattleController.team_1[1,1],dmg,tags)
+                deal_damage(oBattleController.team_1[1,1],dmg,tags2)
         }    
     }
     stam -= stam_cost
