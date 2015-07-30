@@ -278,7 +278,7 @@ if show_dialog
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mp_grid_draw(path_grid)
+            <string>//mp_grid_draw(path_grid)
 draw_self()
 </string>
           </argument>
