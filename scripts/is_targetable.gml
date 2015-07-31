@@ -1,8 +1,8 @@
 ///is_targetable(target)
 for(var i = 0; i < 4;i++)
-    if emphatuate[i,0] = target
+    if emphatuate[i,0] = argument0
         break;
-if i  < 4
+if i < 4
     return false
 else if argument0.untargetable = true 
 {
