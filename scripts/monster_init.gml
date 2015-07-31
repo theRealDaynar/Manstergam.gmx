@@ -461,18 +461,18 @@ ds_map_add(resistances,'nature',.8)
 ds_map_add(resistances,'earth',.6)
 ds_map_add(resistances,'electric',.5)
 ds_map_add(resistances,'bio',1.1)
-max_hp = floor(336 * (150 + 17 * lvl) / 1000)
+max_hp = floor(240 * (150 + 17 * lvl) / 1000)
 hp = max_hp
-max_stam = 36
+max_stam = 30
 stam = max_stam
 endurance = 5
-base_spd = floor(148 * lvlsc)
-str = floor(168 * lvlsc)
-base_def = floor(214 * lvlsc)
-dex = floor(162 * lvlsc)
-base_res = floor(254 * lvlsc)
-pow = floor(130 * lvlsc)
-base_aegis = floor(210 * lvlsc)
+base_spd = floor(240 * lvlsc)
+str = floor(210 * lvlsc)
+base_def = floor(202 * lvlsc)
+dex = floor(150 * lvlsc)
+base_res = floor(192 * lvlsc)
+pow = floor(142 * lvlsc)
+base_aegis = floor(185 * lvlsc)
 break;
 case 20:
 name = "porcupine"

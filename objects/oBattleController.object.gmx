@@ -400,17 +400,21 @@ with(oBattleMonster)
     }
     if ds_map_exists(buffs,"poison") and ds_map_find_value(buffs,"poison") &gt;= 1
     {
-        tags = ds_list_create()
+        var tags = ds_list_create()
         ds_list_add(tags,"poison")
-        dmg = 3
-        event_user(0)
+        deal_damage(id,3,tags)
+    }
+    if ds_map_exists(buffs,"poison2") and ds_map_find_value(buffs,"poison2") &gt;= 1
+    {
+        var tags = ds_list_create()
+        ds_list_add(tags,"poison")
+        deal_damage(id,6,tags)
     }
     if ds_map_exists(buffs,"disease") and ds_map_find_value(buffs,"disease") &gt;= 1
     {
-        tags = ds_list_create()
+        var tags = ds_list_create()
         ds_list_add(tags,"disease")
-        dmg = 6
-        event_user(0)
+        deal_damage(id,6,tags)
     }
     if ds_map_exists(buffs,"immune") and ds_map_find_value(buffs,"immune") &gt;= 1
     {

@@ -20,6 +20,7 @@
     <sprite>sprites\sNPC</sprite>
     <sprite>sprites\sCone</sprite>
     <sprite>sprites\sIlerminerty</sprite>
+    <sprite>sprites\sInv</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\tileset</background>
@@ -155,6 +156,7 @@
     <object>objects\oBattleNPC</object>
     <object>objects\oMovingObject</object>
     <object>objects\oOverworldObject</object>
+    <object>objects\oPlayerController</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rMenu</room>
