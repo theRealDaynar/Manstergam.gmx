@@ -1,5 +1,10 @@
 ///is_targetable(target)
-if argument0.untargetable = true 
+for(var i = 0; i < 4;i++)
+    if emphatuate[i,0] = target
+        break;
+if i  < 4
+    return false
+else if argument0.untargetable = true 
 {
     if target_lock_level = 0
         return false

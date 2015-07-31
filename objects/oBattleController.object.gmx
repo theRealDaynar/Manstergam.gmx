@@ -424,6 +424,11 @@ with(oBattleMonster)
     attack_streak = 0
     if dodge_timer &gt; 0
         dodge_timer --
+    for(var i = 0; i &lt; 4; i++)
+        if instance_exists(emphatuate[i,0])
+            if  -- emphatuate[i,1] &lt; 0
+                emphatuate[i,0] = noone
+            
     if hp &lt;= 0 
     {
         instance_destroy()
@@ -746,6 +751,10 @@ if selected_monster.action_state = 0
         {
             draw_text_color(room_width/3 * (1 + i div 2),yy + spaceing * (1 + i % 2),script_execute(selected_monster.moves[i],m_NAME),col,col,col,col,.4)
             draw_text_color(room_width/3 * (1 + i div 2),yy + spaceing * (1 + i % 2),"Frightened",col,col,col,col,1)
+        }
+        else if selected_monster.area != script_execute(selected_monster.moves[i],m_AREAREQ)
+        {
+            draw_text_color(room_width/3 * (1 + i div 2),yy + spaceing * (1 + i % 2),script_execute(selected_monster.moves[i],m_NAME),col,col,col,col,.4) 
         }
         else
         {

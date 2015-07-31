@@ -28,6 +28,8 @@ else
         for(var i = 0; i < ds_list_size(tags);i++;)
             if ds_map_exists(resistances,ds_list_find_value(tags,i))
                 dmg *= ds_map_find_value(resistances,ds_list_find_value(tags,i))
+    if ds_map_exists(buffs,"fever") and buffs[? "fever"] >= 1
+        dmg *= 1.2
     dmg *= 1 + random(.2) - .1 
     if random(20) > 19
     {

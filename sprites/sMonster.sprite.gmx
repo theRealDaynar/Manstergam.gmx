@@ -38,5 +38,9 @@
     <frame index="15">images\sMonster_15.png</frame>
     <frame index="16">images\sMonster_16.png</frame>
     <frame index="17">images\sMonster_17.png</frame>
+    <frame index="18">images\sMonster_18.png</frame>
+    <frame index="19">images\sMonster_19.png</frame>
+    <frame index="20">images\sMonster_20.png</frame>
+    <frame index="21">images\sMonster_21.png</frame>
   </frames>
 </sprite>

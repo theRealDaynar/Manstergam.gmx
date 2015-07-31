@@ -72,6 +72,11 @@ moves[i] = m_slap
 move_uses[i] = 0
 }
 moves[4] = m_slap
+for(var i = 0; i &lt; 4; i++)
+{
+    emphatuate[i,0] = noone
+    emphatuate[i,1] = -1
+}
 //target type 0 = enemy 1 = ally 2 = self 3 = all enemies
 ///buff_list = ds_map_create() add later yo dawg
 image_speed = 0

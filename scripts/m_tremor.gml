@@ -1,7 +1,7 @@
-///m_poison_bite()
+///m_tremor()
 var action = 0;
-var atk_pwr = 4;
-var stam_cost =8
+var atk_pwr = 10;
+var stam_cost = 15
 if argument_count != 0
     action = argument[0]
 switch(action)
@@ -13,15 +13,19 @@ case 1:
     return 0;
 break;
 case 2:
-    return "Disease Bite"
+    return "Tremor"
 break;
 case 3:
-    return "Bio strength attack, 1/2 disease build up."
+    return "Dexterity based water attack."
+break;
+case m_AREAREQ:
+    return 1
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
+    area = 0
+    untargetable = 0
     var tags = ds_list_create()
-    ds_list_add(tags,"bio","str")
+    ds_list_add(tags,"earth","str")
     deal_damage(target,atk_pwr * str * lvld,tags)
-    update_buffs(target,"disease",.5)
-    stam -= stam_cost
+    stam -=stam_cost
 }

@@ -74,6 +74,8 @@
       <script>scripts\m_mortify.gml</script>
       <script>scripts\m_ooze_spit.gml</script>
       <script>scripts\m_poison_bite.gml</script>
+      <script>scripts\m_poison_lick.gml</script>
+      <script>scripts\m_toxic_fume.gml</script>
       <script>scripts\m_poison_ivy.gml</script>
       <script>scripts\m_powder_rain.gml</script>
       <script>scripts\m_quick_peck.gml</script>
@@ -91,6 +93,7 @@
       <script>scripts\m_slushball.gml</script>
       <script>scripts\m_snowball.gml</script>
       <script>scripts\m_soar.gml</script>
+      <script>scripts\m_burrow.gml</script>
       <script>scripts\m_solidify.gml</script>
       <script>scripts\m_soporific_powder.gml</script>
       <script>scripts\m_spellshot.gml</script>
@@ -100,6 +103,7 @@
       <script>scripts\m_swoon.gml</script>
       <script>scripts\m_tranquilize.gml</script>
       <script>scripts\m_trap.gml</script>
+      <script>scripts\m_tremor.gml</script>
       <script>scripts\m_water_shot.gml</script>
       <script>scripts\m_webshot.gml</script>
       <script>scripts\m_whirl_wind.gml</script>
@@ -159,7 +163,7 @@
     <room>rooms\rOnline</room>
     <room>rooms\rHost</room>
   </rooms>
-  <constants number="26">
+  <constants number="27">
     <constant name="INIT_CMD">0</constant>
     <constant name="MOVES_CMD">1</constant>
     <constant name="PING_CMD">2</constant>
@@ -177,6 +181,7 @@
     <constant name="m_END_ACTION">6</constant>
     <constant name="m_MTYPE">7</constant>
     <constant name="m_COST">8</constant>
+    <constant name="m_AREAREQ">9</constant>
     <constant name="mt_O">1</constant>
     <constant name="mt_D">2</constant>
     <constant name="mt_B">3</constant>

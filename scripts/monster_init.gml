@@ -407,4 +407,93 @@ base_res = floor(244 * lvlsc)
 pow = floor(132 * lvlsc)
 base_aegis = floor(205 * lvlsc)
 break;
+case 17:
+name = "I AM CAT HEAR ME MEOW"
+moves[0] = m_swoon
+moves[1] = m_fever_scratch
+moves[2] = m_scratch
+moves[3] = m_dodge
+ds_map_add(resistances,'heat',1.25)
+max_hp = floor(200 * (150 + 17 * lvl) / 1000)
+hp = max_hp
+max_stam = 24
+stam = max_stam
+endurance = 5
+base_spd = floor(252 * lvlsc)
+str = floor(210 * lvlsc)
+base_def = floor(192 * lvlsc)
+dex = floor(174 * lvlsc)
+base_res = floor(172 * lvlsc)
+pow = floor(184 * lvlsc)
+base_aegis = floor(168 * lvlsc)
+break;
+case 18:
+name = "FRUGGY GGGGGG"
+moves[0] = m_toxic_fume
+moves[1] = m_veil_gas
+moves[2] = m_water_shot
+moves[3] = m_poison_lick
+ds_map_add(resistances,'heat',.8)
+ds_map_add(resistances,'water',.8)
+ds_map_add(resistances,'electric',1.2)
+ds_map_add(resistances,'bio',1.1)
+max_hp = floor(336 * (150 + 17 * lvl) / 1000)
+hp = max_hp
+max_stam = 36
+stam = max_stam
+endurance = 5
+base_spd = floor(148 * lvlsc)
+str = floor(168 * lvlsc)
+base_def = floor(214 * lvlsc)
+dex = floor(162 * lvlsc)
+base_res = floor(254 * lvlsc)
+pow = floor(130 * lvlsc)
+base_aegis = floor(210 * lvlsc)
+break;
+case 19:
+name = "the WORMINATOR"
+moves[0] = m_burrow
+moves[1] = m_tremor
+moves[2] = m_gnash
+moves[3] = m_acid_spit
+ds_map_add(resistances,'wind',1.2)
+ds_map_add(resistances,'nature',.8)
+ds_map_add(resistances,'earth',.6)
+ds_map_add(resistances,'electric',.5)
+ds_map_add(resistances,'bio',1.1)
+max_hp = floor(336 * (150 + 17 * lvl) / 1000)
+hp = max_hp
+max_stam = 36
+stam = max_stam
+endurance = 5
+base_spd = floor(148 * lvlsc)
+str = floor(168 * lvlsc)
+base_def = floor(214 * lvlsc)
+dex = floor(162 * lvlsc)
+base_res = floor(254 * lvlsc)
+pow = floor(130 * lvlsc)
+base_aegis = floor(210 * lvlsc)
+break;
+case 20:
+name = "pork u pan"
+moves[0] = m_rest
+moves[1] = m_body_slam
+moves[2] = m_curl_up
+moves[3] = m_roll_slam
+ds_map_add(resistances,'heat',1.25)
+ds_map_add(resistances,'bio',1.1)
+max_hp = floor(210 * (150 + 17 * lvl) / 1000)
+deflect_percent = .2
+hp = max_hp
+max_stam = 35
+stam = max_stam
+endurance = 1
+base_spd = floor(155 * lvlsc)
+str = floor(268 * lvlsc)
+base_def = floor(260 * lvlsc)
+dex = floor(134 * lvlsc)
+base_res = floor(224 * lvlsc)
+pow = floor(150 * lvlsc)
+base_aegis = floor(175 * lvlsc)
+break;
 }
