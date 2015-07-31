@@ -16,7 +16,7 @@ case m_TTYPE:
     return 0;
 break;
 case m_NAME:
-    return "Soar"
+    return "Burrow"
 break;
 case m_DESC:
     return "Burrow beneath the ground."

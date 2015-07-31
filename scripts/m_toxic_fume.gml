@@ -12,7 +12,7 @@ case 1:
     return 0;
 break;
 case 2:
-    return "Poison lick"
+    return "Toxic Fume"
 break;
 case 3:
     return "Poisons."

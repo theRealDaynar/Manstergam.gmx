@@ -13,7 +13,7 @@ case 1:
     return 0;
 break;
 case 2:
-    return "Life_Hack"
+    return "Life Hack"
 break;
 case 3:
     return "Power based dark attack."

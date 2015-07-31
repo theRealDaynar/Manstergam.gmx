@@ -408,7 +408,7 @@ pow = floor(132 * lvlsc)
 base_aegis = floor(205 * lvlsc)
 break;
 case 17:
-name = "I AM CAT HEAR ME MEOW"
+name = "longcat"
 moves[0] = m_swoon
 moves[1] = m_fever_scratch
 moves[2] = m_scratch
@@ -428,7 +428,7 @@ pow = floor(184 * lvlsc)
 base_aegis = floor(168 * lvlsc)
 break;
 case 18:
-name = "FRUGGY GGGGGG"
+name = "frug"
 moves[0] = m_toxic_fume
 moves[1] = m_veil_gas
 moves[2] = m_water_shot
@@ -451,7 +451,7 @@ pow = floor(130 * lvlsc)
 base_aegis = floor(210 * lvlsc)
 break;
 case 19:
-name = "the WORMINATOR"
+name = "sandworm"
 moves[0] = m_burrow
 moves[1] = m_tremor
 moves[2] = m_gnash
@@ -475,7 +475,7 @@ pow = floor(130 * lvlsc)
 base_aegis = floor(210 * lvlsc)
 break;
 case 20:
-name = "pork u pan"
+name = "porcupine"
 moves[0] = m_rest
 moves[1] = m_body_slam
 moves[2] = m_curl_up

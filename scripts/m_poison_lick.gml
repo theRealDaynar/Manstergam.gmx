@@ -13,10 +13,10 @@ case 1:
     return 0;
 break;
 case 2:
-    return "Poison bite"
+    return "Poison Lick"
 break;
 case 3:
-    return "Deals low strength based bio damage, 1/2 poison build up."
+    return "Low strength based bio damage. Builds up poison2."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     var tags = ds_list_create()
