@@ -150,13 +150,15 @@
       <object>objects\oClient</object>
       <object>objects\oServer</object>
     </objects>
-    <object>objects\oPlayer</object>
-    <object>objects\oSign</object>
-    <object>objects\oNPC</object>
-    <object>objects\oBattleNPC</object>
-    <object>objects\oMovingObject</object>
-    <object>objects\oOverworldObject</object>
-    <object>objects\oPlayerController</object>
+    <objects name="Overworld">
+      <object>objects\oNPC</object>
+      <object>objects\oSign</object>
+      <object>objects\oMovingObject</object>
+      <object>objects\oPlayer</object>
+      <object>objects\oOverworldObject</object>
+      <object>objects\oPlayerController</object>
+      <object>objects\oBattleNPC</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rMenu</room>

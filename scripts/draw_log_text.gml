@@ -13,7 +13,10 @@ while(string_pos('[c=',str) != 0)
 }
 //show_debug_message(str)
 xx = argument0 - string_width(str)/2
-
+if xx < 0
+    xx = 0
+else if xx + string_width(str) > room_width
+    xx = room_width - string_width(str)
 str = argument2
 
 draw_set_halign(fa_left)

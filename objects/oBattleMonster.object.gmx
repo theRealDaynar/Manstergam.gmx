@@ -560,6 +560,11 @@ if buffs[? "poison"] &gt;= 1
     draw_sprite(sStatusEffectIcon,1,x + i * 20,y + 200 - 34)
     i++
 }
+if buffs[? "poison2"] &gt;= 1
+{
+    draw_sprite(sStatusEffectIcon,9,x + i * 20,y + 200 - 34)
+    i++
+}
 if buffs[? "disease"] &gt;= 1
 {
     draw_sprite(sStatusEffectIcon,2,x + i * 20,y + 200 - 34)
@@ -585,11 +590,22 @@ if buffs[? "weakness"] &gt;= 1
     draw_sprite(sStatusEffectIcon,6,x + i * 20,y + 200 - 34)
     i++
 }
+if buffs[? "fever"] &gt;= 1
+{
+    draw_sprite(sStatusEffectIcon,10,x + i * 20,y + 200 - 34)
+    i++
+}
 if  instance_exists(damage_bond)
 {
     draw_sprite_ext(sStatusEffectIcon,7,x + i * 20,y + 200 - 34,1,1,0,damage_bond.name_color,1)
     i++
 }
+for (var ii=0; ii&lt;4; ii+=1)
+{
+    if instance_exists(emphatuate[i,0])
+        draw_sprite_ext(sStatusEffectIcon,11,x + i * 20,y + 200 - 34,1,1,0,emphatuate[i,0].name_color,1)
+};
+
 if draw_stats
 {
     draw_set_font(fSuperTest)

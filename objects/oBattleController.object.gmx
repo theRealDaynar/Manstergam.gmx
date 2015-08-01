@@ -62,6 +62,7 @@ log_location = 0
 pressed_back = 0
 hovertime = 0
 current_hover = noone
+bag_open = false
 //TEMP
 /*
 for(var yy = 0; yy &lt; 2; yy ++)
@@ -862,7 +863,10 @@ if selected_monster.action_state = 0
     else
     {
         col = c_black
+        var col2 = c_black
         if mouse_y &gt;= yy and mouse_x &gt; 5 * room_width/6
+        { 
+            if mouse_y &lt; yy + (room_height - yy)/2
             {
                 if current_hover = 4
                     hovertime++
@@ -908,7 +912,32 @@ if selected_monster.action_state = 0
                     }
                 }
             } 
-            draw_text_color(5.5*room_width/6,yy + (room_height - yy)/2,"Slap",col,col,col,col,1)
+            
+            //if mouse isnt over slap not slap then it must be over bag
+            if col = c_black
+            {
+                if current_hover = 5
+                    hovertime++
+                else
+                {
+                    hovertime = 0
+                    current_hover = 5
+                }
+                if mb_pressed 
+                    mouse_current_pressed = 5
+                else if mb_released and mouse_current_pressed = 5
+                {
+                    bag_open = true
+                }
+                col2 = c_white
+            }
+            else
+                col2 = c_black
+            
+            
+        }
+        draw_text_color(5.5*room_width/6,yy + spaceing * 2,"Open Bag",col2,col2,col2,col2,1)
+        draw_text_color(5.5*room_width/6,yy + spaceing,"Slap",col,col,col,col,1)
     }
     if mb_released
         mouse_current_pressed = -1
@@ -959,10 +988,14 @@ else if hovertime &gt;= room_speed and instance_exists(selected_monster)
         draw_log_text(mouse_x,mouse_y - 25,script_execute(selected_monster.moves[current_hover],m_DESC),c_white)
         //draw_text(mouse_x,mouse_y - 25,script_execute(selected_monster.moves[current_hover],m_DESC))
     }
-    else
+    else if current_hover = 4
     {
         draw_log_text(mouse_x,mouse_y - 25,script_execute(m_slap,m_DESC),c_white)
         //draw_text(mouse_x,mouse_y - 25,script_execute(m_slap,m_DESC))
+    }
+    else
+    {
+        draw_log_text(mouse_x,mouse_y - 25,"Open bag",c_white)
     }
     draw_set_font(fTest)
 }
