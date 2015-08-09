@@ -445,7 +445,47 @@ event_user(0)
 with(oWeather)
     event_user(0)
 ds_list_insert(combat_log,0,"End Round")
-
+if instance_exists(oBattleMonster) 
+{
+    var t1 = 0;
+    var t2 = 0;
+    with(oBattleMonster)
+    {
+        if team = 1
+            t1 = 1
+        else
+            t2 = 1
+    }
+    if !t1
+        game_restart()
+    else if !t2
+    {
+        if instance_exists(oPlayerController)
+        {
+            if caught_monster != 0 
+            {
+                for(var i = 0; i &lt; 4; i++)
+                if oPlayerController.monsters[i % 2,i div 2] = noone
+                {
+                    oPlayerController.monsters[i % 2,i div 2] = caught_monster
+                    break;
+                }
+                if i = 4
+                for(var i = 0; i &lt; 4; i++)
+                if oPlayerController.monsters[i % 2 + 2,i div 2] = noone
+                {
+                    oPlayerController.monsters[i % 2 + 2,i div 2] = caught_monster
+                    break;
+                }
+            }
+            room_goto(rOverworld)
+        }
+        else
+            game_restart()
+    }
+}
+else
+    game_restart()
 
 }
 

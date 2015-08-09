@@ -71,7 +71,37 @@ m_bc = c_black
 m_hc = c_white
 m_c = c_blue
 m_ac = c_aqua
-
+alarm[0] = room_speed
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///random encounter alarm
+with(oPlayer)
+    if tile_map[# floor(x/64),floor(y/64)] = 2
+    {
+        if random(1) &lt; .5
+            room_goto(rBattle)
+    }
+alarm[0] = room_speed
 </string>
           </argument>
         </arguments>
@@ -96,6 +126,58 @@ m_ac = c_aqua
             <kind>1</kind>
             <string>///open/close menu
 inv_open = abs( -- inv_open)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if room = rBattle
+{
+    var team_num = 0
+        for(var yy = 0; yy &lt; 2; yy ++)
+            for(var xx = 0; xx &lt; 2; xx ++)
+            {
+                with(oBattleController.team_1[xx,yy])
+                {
+                    if other.monsters[xx,yy] != noone
+                    {
+                        team_num ++
+                        monster_init(other.monsters[xx,yy])
+                    }
+                    else
+                        instance_destroy()
+                }
+            }
+        for(var yy = 0; yy &lt; 2; yy ++)
+            for(var xx = 0; xx &lt; 2; xx ++)
+            {
+                if team_num &gt; xx + yy * 2
+                {
+                    with(oBattleController.team_2[xx,yy])
+                        monster_init(irandom(14))
+                }
+                else
+                    with(oBattleController.team_2[xx,yy])
+                        instance_destroy()
+            }
+}
 </string>
           </argument>
         </arguments>
@@ -170,6 +252,9 @@ if inv_open
           <argument>
             <kind>1</kind>
             <string>///do nothing, button is part of the gui
+/*for(var yy = 0; yy &lt; room_height/64;yy++)
+for(var xx = 0; xx &lt; room_width/64;xx++)
+    draw_text(xx * 64,yy * 64,tile_map[# xx,yy])
 </string>
           </argument>
         </arguments>

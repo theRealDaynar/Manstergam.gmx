@@ -104,7 +104,7 @@ instance_create(room_width/2,room_height - sprite_get_height(sBtnPlay)/2 * 5 - p
             }
     instance_destroy()
 }
-else if room != rMenu and room != rOverworld
+else if room != rMenu //and room != rOverworld
     instance_destroy()
 </string>
           </argument>
