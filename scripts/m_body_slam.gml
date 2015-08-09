@@ -20,7 +20,7 @@ case 3:
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     tags = ds_list_create()
-    ds_list_add(tags,"normal")
+    ds_list_add(tags,"normal","str")
     deal_damage(target,atk_pwr * str * lvld,tags)
     stam -= stam_cost
 }

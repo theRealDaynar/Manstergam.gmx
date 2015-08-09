@@ -2,9 +2,9 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>oWeather</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,21 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>type = "magic"
-end_text = "Powder stops falling from the sky"
-
+            <string>type = "normal"
 if instance_exists(oBattleController.weather[? type])
          with(oBattleController.weather[? type])
             instance_destroy()
 ds_map_add(oBattleController.weather,type,id)
-sleep_countdown = 6
-ds_list_insert(oBattleController.combat_log,0,"Powder begins falling from the sky.")
+ds_list_insert(oBattleController.combat_log,0,start_text)
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="10">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -56,12 +53,12 @@ ds_list_insert(oBattleController.combat_log,0,"Powder begins falling from the sk
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// end round
-sleep_countdown--
-if sleep_countdown &lt;= 0
-with(oBattleMonster)
-    update_buffs(id,"sleep",1)
-instance_destroy()
+            <string>with(oBattleMonster)
+{
+    var tags = ds_list_create()
+    ds_list_add(tags,dmg_type)
+    deal_damage(id,2,tags)
+}
 </string>
           </argument>
         </arguments>

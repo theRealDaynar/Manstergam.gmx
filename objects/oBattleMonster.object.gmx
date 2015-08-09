@@ -302,6 +302,38 @@ var istargetable = true;
         istargetable = is_targetable(other.id)
 with(oBattleController)
 {
+    //capture
+    if using_item and other.team = 2
+    {
+        using_item=0
+        if random(1) &lt; .3
+        {
+            caught_monster = other.image_index
+            with(other.id)
+                instance_destroy()
+        }
+        if instance_exists(oClient)
+        {
+            stage = 3
+            with(oClient)
+                SendTurn()
+        }
+        else
+            event_user(1)
+        with(oBattleMonster)
+            if team = 1
+                selected_move = noone
+        if instance_exists(oClient)
+                    {
+                        stage = 3
+                        with(oClient)
+                            SendTurn()
+                    }
+                    else
+                        event_user(1)
+    }
+    else // attack
+    {
     if istargetable
     {
     if state = 1 and selected_monster.action_state = 1
@@ -371,6 +403,7 @@ with(oBattleController)
                 
         }*/
          }   
+    }
     }
 }
 
@@ -537,6 +570,12 @@ if team = 1
     draw_self()
 else
     draw_sprite_ext(sprite_index,image_index,x + sprite_width,y,-image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+
+if team = 2 and oBattleController.using_item
+{
+    draw_sprite_ext(sCaptureCube,0,x + 100,y + 100,.5,.5,0,c_white,.9)
+}
+
 //stats
 //hp
 draw_text_colour(x+100,y+20,name,name_color,name_color,name_color,name_color,1)

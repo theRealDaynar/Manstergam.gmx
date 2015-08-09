@@ -496,4 +496,31 @@ base_res = floor(224 * lvlsc)
 pow = floor(150 * lvlsc)
 base_aegis = floor(175 * lvlsc)
 break;
+case 21:
+name = "Te illuminato"
+moves[0] = m_drought
+moves[1] = m_sandstorm
+moves[2] = m_laser_beam
+moves[3] = m_geokinesis
+ds_map_add(resistances,'earth',.6)
+ds_map_add(resistances,'heat',.6)
+ds_map_add(resistances,'water',1.1)
+ds_map_add(resistances,'cold',.8)
+ds_map_add(resistances,'dark',.9)
+ds_map_add(resistances,'electric',.5)
+ds_map_add(resistances,'arcane',.8)
+ds_map_add(resistances,'bio',0)
+max_hp = floor(254 * (150 + 17 * lvl) / 1000)
+hp = max_hp
+max_stam = 25
+stam = max_stam
+endurance = 4
+base_spd = floor(194 * lvlsc)
+str = floor(145 * lvlsc)
+base_def = floor(240 * lvlsc)
+dex = floor(138 * lvlsc)
+base_res = floor(220 * lvlsc)
+pow = floor(212 * lvlsc)
+base_aegis = floor(294 * lvlsc)
+break;
 }

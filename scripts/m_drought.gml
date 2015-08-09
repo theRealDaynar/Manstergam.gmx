@@ -1,4 +1,4 @@
-///m_powder_rain()
+///m_drought()
 var action = 0;
 var stam_cost = 16;
 if argument_count != 0
@@ -19,7 +19,7 @@ case 3:
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE: 
      
-     instance_create(0,0,oPowderRain) 
+     instance_create(0,0,oDrought) 
      cd[selected_move] = 6
      stam -= stam_cost
 }

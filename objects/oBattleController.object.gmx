@@ -30,14 +30,12 @@
 randomize()
 draw_set_font(fTest)
 mouse_current_pressed = -1
-
 turn_list = ds_list_create();
 state = 1
 selected_monster = noone
 
-combat_log = ds_list_create()
-
-weather = noone
+combat_log = ds_list_create();
+weather = ds_map_create()
 first_monster = noone
 padding = (room_width - 800)/5
 if !instance_exists(oClient)
@@ -61,8 +59,10 @@ force_show_log = false
 log_location = 0
 pressed_back = 0
 hovertime = 0
+cube_size = .7
 current_hover = noone
-bag_open = false
+using_item = false
+caught_monster = noone
 //TEMP
 /*
 for(var yy = 0; yy &lt; 2; yy ++)
@@ -425,7 +425,8 @@ with(oBattleMonster)
         else
             ds_map_delete(buffs,"immune")
     }
-    script_execute(moves[selected_move],m_END_ACTION)
+    if selected_move != noone
+        script_execute(moves[selected_move],m_END_ACTION)
     attack_streak = 0
     if dodge_timer &gt; 0
         dodge_timer --
@@ -441,10 +442,11 @@ with(oBattleMonster)
     }
 }
 event_user(0)
-if instance_exists(weather)
-    with(weather)
-        event_user(0)
+with(oWeather)
+    event_user(0)
 ds_list_insert(combat_log,0,"End Round")
+
+
 }
 
 </string>
@@ -522,21 +524,26 @@ if log_location &lt; 0
             <string>/// stage 2 start
 ds_list_insert(combat_log,0,"Start Round")
 stage = 2
+if !ds_exists(turn_list,ds_type_list)
+    turn_list = ds_list_create()
+else
+    ds_list_clear(turn_list)
 selected_monster = noone
     with(oBattleMonster)
     {
-        if (!ds_map_exists(buffs,"sleep") or ds_map_find_value(buffs,"sleep") &lt; 1)
+        if selected_move != noone and (!ds_map_exists(buffs,"sleep") or ds_map_find_value(buffs,"sleep") &lt; 1)
         {
         script_execute(moves[selected_move],m_IMI_ACTION)
         var placed = 0;
-        var turn_list = oBattleController.turn_list;
-        for(var ii = 0; ii &lt; ds_list_size(turn_list); ii++) 
+        var t_list = oBattleController.turn_list;
+        
+        for(var ii = 0; ii &lt; ds_list_size(t_list); ii++) 
         {
-            var monster_id = ds_list_find_value(turn_list,ii);
+            var monster_id = ds_list_find_value(t_list,ii);
             if script_execute(monster_id.moves[monster_id.selected_move],m_PRIORITY) &lt; script_execute(moves[selected_move],m_PRIORITY)
             {
                 placed = 1
-                ds_list_insert(turn_list,ii,id)
+                ds_list_insert(t_list,ii,id)
                 break;
             }
             else if script_execute(monster_id.moves[monster_id.selected_move],m_PRIORITY) = script_execute(moves[selected_move],m_PRIORITY)
@@ -547,19 +554,19 @@ selected_monster = noone
                 if mon_spd &lt; spd
                 {
                     placed = 1
-                    ds_list_insert(turn_list,ii,id)
+                    ds_list_insert(t_list,ii,id)
                     break;
                 }
                 else if mon_spd = spd and random(1) &gt; .5
                 {
                     placed = 1
-                    ds_list_insert(turn_list,ii,id)
+                    ds_list_insert(t_list,ii,id)
                     break;
                 }
             }
         }
         if !placed
-            ds_list_insert(turn_list,ii,id)
+            ds_list_insert(t_list,ii,id)
         }
         else
         ds_list_insert(other.combat_log,0,name + " is asleep")
@@ -611,7 +618,7 @@ if instance_exists(oClient)
 }
 stage = 1
 with(oBattleMonster)
-    if cd[selected_move] &gt; 0
+    if selected_move = noone or cd[selected_move] &gt; 0
     {
         for(var i = 0; i &lt; 4; i++)
             if cd[i] &lt;= 0 
@@ -699,7 +706,7 @@ var spaceing = (room_height - yy)/3;
 if stage = 1 and instance_exists(selected_monster)
 {
 //draw back button
-if selected_monster.action_state = 1 or selected_monster != first_monster
+if selected_monster.action_state = 1 or selected_monster != first_monster or using_item
 {
     var back_blend = c_dkgray
     if mouse_x &lt; room_width/6 and mouse_y &gt; yy
@@ -709,7 +716,11 @@ if selected_monster.action_state = 1 or selected_monster != first_monster
             pressed_back = 1
         else if mb_released and pressed_back
         {
-            if selected_monster.action_state = 1
+            if using_item
+            {
+                using_item = false
+            }
+            else if selected_monster.action_state = 1
             {
                 if ds_exists(selected_monster.target_que,ds_type_queue)
                     ds_queue_destroy(selected_monster.target_que)
@@ -732,7 +743,7 @@ if selected_monster.action_state = 1 or selected_monster != first_monster
     draw_sprite_ext(sBackButton,0,0,yy + spaceing * 1.5 - sprite_get_height(sBackButton)/2,1,1,0,back_blend,1)    
 }    
 
-if selected_monster.action_state = 0
+if selected_monster.action_state = 0 and using_item = 0
 {
     var col = c_black;
     draw_set_halign(fa_center)
@@ -917,7 +928,9 @@ if selected_monster.action_state = 0
             if col = c_black
             {
                 if current_hover = 5
+                {
                     hovertime++
+                }
                 else
                 {
                     hovertime = 0
@@ -927,7 +940,7 @@ if selected_monster.action_state = 0
                     mouse_current_pressed = 5
                 else if mb_released and mouse_current_pressed = 5
                 {
-                    bag_open = true
+                    using_item = true
                 }
                 col2 = c_white
             }
@@ -936,12 +949,20 @@ if selected_monster.action_state = 0
             
             
         }
-        draw_text_color(5.5*room_width/6,yy + spaceing * 2,"Open Bag",col2,col2,col2,col2,1)
+        if current_hover = 5
+        {
+            if cube_size &lt; 1
+                cube_size += .01
+        }
+        else if cube_size &gt; .7
+            cube_size -=.01
+        draw_sprite_stretched(sCaptureCube,0,5.5*room_width/6 - room_width/20 * cube_size/2,yy + spaceing * 2 - room_width/20 * cube_size/2,room_width/20 * cube_size,room_width/20 * cube_size)
+        //draw_text_color(5.5*room_width/6,yy + spaceing * 2,"Open Bag",col2,col2,col2,col2,1)
         draw_text_color(5.5*room_width/6,yy + spaceing,"Slap",col,col,col,col,1)
     }
     if mb_released
         mouse_current_pressed = -1
-}else if selected_monster.action_state = 1
+}else if selected_monster.action_state = 1 or using_item = 1
 {
     draw_text(room_width/2,yy + spaceing,"Choose target.")
 }
@@ -995,9 +1016,14 @@ else if hovertime &gt;= room_speed and instance_exists(selected_monster)
     }
     else
     {
-        draw_log_text(mouse_x,mouse_y - 25,"Open bag",c_white)
+        draw_log_text(mouse_x,mouse_y - 25,"Attempt to capture an enemy manster.",c_white)
     }
     draw_set_font(fTest)
+}
+if caught_monster != noone
+{
+draw_sprite_ext(sCaptureCube,0,50,50,.5,.5,0,c_white,1)
+draw_sprite_ext(sMonster,caught_monster,50 - 100 * .3,50 - 100 * .3,.3,.3,0,c_white,.3)
 }
 </string>
           </argument>

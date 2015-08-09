@@ -59,12 +59,10 @@ if !crit
 else
     ds_list_insert(oBattleController.combat_log,0,"[c="+string(name_color)+"]"+name+"[/c]" + " takes [c=rainbow]" + string(dmg) + " damage, CRITICAL HIT![/c]" )
 if instance_exists(damage_bond) and damage_bond.id != id and -1 = ds_list_find_index(tags,"damage_bond")
-    with(damage_bond)
     {
-        tags = ds_list_create()
-        ds_list_add(tags,"damage_bond")
-        dmg = other.dmg
-        event_user(0)
+        var dbtags = ds_list_create()
+        ds_list_add(dbtags,"damage_bond")
+        deal_damage(damage_bond,dmg,dbtags)
     }
 }
 if ds_exists(tags,ds_type_list)

@@ -12,6 +12,7 @@
     <sprite>sprites\sBtnOnline</sprite>
     <sprite>sprites\sBtnHost</sprite>
     <sprite>sprites\sStatusEffectIcon</sprite>
+    <sprite>sprites\sCaptureCube</sprite>
     <sprite>sprites\sBloodSplotch</sprite>
     <sprite>sprites\sHealthUp</sprite>
     <sprite>sprites\sBloodSplatter</sprite>
@@ -42,6 +43,7 @@
       <script>scripts\m_blind.gml</script>
       <script>scripts\m_blood_bite.gml</script>
       <script>scripts\m_body_slam.gml</script>
+      <script>scripts\m_laser_beam.gml</script>
       <script>scripts\m_break.gml</script>
       <script>scripts\m_burning_roll.gml</script>
       <script>scripts\m_burrow.gml</script>
@@ -60,6 +62,7 @@
       <script>scripts\m_fire_caugh.gml</script>
       <script>scripts\m_flay.gml</script>
       <script>scripts\m_freeze.gml</script>
+      <script>scripts\m_geokinesis.gml</script>
       <script>scripts\m_frenzy.gml</script>
       <script>scripts\m_frenzy_old.gml</script>
       <script>scripts\m_gnash.gml</script>
@@ -78,6 +81,8 @@
       <script>scripts\m_poison_ivy.gml</script>
       <script>scripts\m_poison_lick.gml</script>
       <script>scripts\m_powder_rain.gml</script>
+      <script>scripts\m_drought.gml</script>
+      <script>scripts\m_sandstorm.gml</script>
       <script>scripts\m_quick_peck.gml</script>
       <script>scripts\m_regenerate.gml</script>
       <script>scripts\m_rest.gml</script>
@@ -135,7 +140,11 @@
       <object>objects\oBattleController</object>
       <object>objects\oBattleMonster</object>
       <object>objects\oPowderRain</object>
+      <object>objects\oWeather</object>
+      <object>objects\oSandstorm</object>
+      <object>objects\oDrought</object>
       <object>objects\oSelectedTeam</object>
+      <object>objects\oWeatherBasic</object>
       <object>objects\oDamageText</object>
     </objects>
     <objects name="Temp Selection">

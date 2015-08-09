@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>oWeather</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,43 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>type = "magic"
-end_text = "Powder stops falling from the sky"
-
-if instance_exists(oBattleController.weather[? type])
-         with(oBattleController.weather[? type])
-            instance_destroy()
-ds_map_add(oBattleController.weather,type,id)
-sleep_countdown = 6
-ds_list_insert(oBattleController.combat_log,0,"Powder begins falling from the sky.")
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="10">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// end round
-sleep_countdown--
-if sleep_countdown &lt;= 0
-with(oBattleMonster)
-    update_buffs(id,"sleep",1)
-instance_destroy()
+            <string>start_text = "The beating heat and empty skies cause a drought."
+end_text = "Somehow water has returned to the lands ending the drought."
+dmg_type = "heat"
+event_inherited()
 </string>
           </argument>
         </arguments>
