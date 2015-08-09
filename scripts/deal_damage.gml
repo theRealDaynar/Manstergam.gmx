@@ -45,7 +45,7 @@ else
         {
             tags = ds_list_create()
             ds_list_add(tags,"deflect")
-            dmg = ceil(deflect_percent * other.dmg)
+            dmg = ceil(deflect_percent * dmg)
             event_user(0)
         }
 }
