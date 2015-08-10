@@ -59,7 +59,8 @@ for(var xx = 0; xx &lt; 4; xx++)
     for(var yy = 0; yy &lt; 2; yy++)
         monsters[xx,yy] = noone
 //give a random starter
-monsters[0,0] = irandom(sprite_get_number(sMonster)-2)
+monsters[0,0] = instance_create(0,0,oMonster)
+monsters[0,0].image_index = irandom(sprite_get_number(sMonster) - 2)
 
 //menu (m = menu)
 inv_open = 0
@@ -156,10 +157,11 @@ inv_open = abs( -- inv_open)
             {
                 with(oBattleController.team_1[xx,yy])
                 {
-                    if other.monsters[xx,yy] != noone
+                    if instance_exists(other.monsters[xx,yy])
                     {
                         team_num ++
-                        monster_init(other.monsters[xx,yy])
+                        lvl = other.monsters[xx,yy].level
+                        monster_init(other.monsters[xx,yy].image_index)
                     }
                     else
                         instance_destroy()
@@ -225,8 +227,12 @@ if inv_open
             if xx &lt; 2
                 draw_roundrect_colour(m_x + (xx + 1) * m_pad + xx * m_size - m_outline * 2,m_y + (yy + 1) * m_pad + yy * m_size - m_outline * 2,m_x + (xx + 1) * m_pad + (xx + 1) * m_size + m_outline * 2,m_y + (yy + 1) * m_pad + (1 + yy) * m_size + m_outline * 2,m_hc,m_hc,0)
             draw_roundrect_colour(m_x + (xx + 1) * m_pad + xx * m_size - m_outline ,m_y + (yy + 1) * m_pad + yy * m_size - m_outline ,m_x + (xx + 1) * m_pad + (xx + 1) * m_size + m_outline,m_y + (yy + 1) * m_pad + (yy + 1) * m_size + m_outline,inner_color,inner_color,0)
-            if monsters[xx,yy] != noone
-                draw_sprite_ext(sMonster,monsters[xx,yy],m_x + (xx + 1) * m_pad + xx * m_size,m_y + (yy + 1) * m_pad + yy * m_size,m_size/200,m_size/200,0,c_white,1)   
+            if instance_exists(monsters[xx,yy])
+            {
+                draw_sprite_ext(sMonster,monsters[xx,yy].image_index,m_x + (xx + 1) * m_pad + xx * m_size,m_y + (yy + 1) * m_pad + yy * m_size,m_size/200,m_size/200,0,c_white,1)   
+                draw_healthbar(m_x + (xx + 1) * m_pad + xx * m_size,m_y + (yy + 1) * m_pad + (yy + 1) * m_size - 2,m_x + (xx + 1) * m_pad + (xx + 1) * m_size,m_y + (yy + 1) * m_pad + (yy + 1) * m_size,monsters[xx,yy].xpe/monsters[xx,yy].max_xpe * 100,c_white,c_yellow,c_yellow,c_yellow,false,false)
+                draw_text_color(m_x + (xx + 1) * m_pad + xx * m_size,m_y + (yy + 1) * m_pad + yy * m_size,monsters[xx,yy].level,c_gray,c_gray,c_ltgray,c_ltgray,1)
+            }
         }
 }
 </string>

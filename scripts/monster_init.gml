@@ -1,10 +1,13 @@
 image_index = argument0
-lvl = global.level;
-if lvl > 50
-    lvl = 50
-else if lvl <= 0
-    lvl = 1
-global.level = lvl;
+if !instance_exists(oPlayerController)
+{
+    lvl = global.level;
+    if lvl > 50
+        lvl = 50
+    else if lvl <= 0
+        lvl = 1
+    global.level = lvl;
+}
 var lvlsc = lvl /50;
 if !ds_exists(resistances,ds_type_map)
     resistances = ds_map_create()

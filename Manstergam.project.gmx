@@ -130,6 +130,7 @@
       <script>scripts\draw_text_outline.gml</script>
       <script>scripts\init_word_highlights.gml</script>
     </scripts>
+    <script>scripts\gain_xpe.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fTest</font>
@@ -168,6 +169,7 @@
       <object>objects\oPlayerController</object>
       <object>objects\oBattleNPC</object>
     </objects>
+    <object>objects\oMonster</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rMenu</room>

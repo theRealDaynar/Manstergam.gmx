@@ -41,13 +41,11 @@ else
         dmg = 1
     hp -= dmg
     if deflect_percent > 0 and ds_list_find_index(tags,"poison") = -1 and ds_list_find_index(tags,"disease") = -1 and ds_list_find_index(tags,"deflect") = -1
-        with(other)
-        {
-            tags = ds_list_create()
-            ds_list_add(tags,"deflect")
-            dmg = ceil(deflect_percent * dmg)
-            event_user(0)
-        }
+    {
+            var tags2 = ds_list_create()
+            ds_list_add(tags2,"deflect")
+            deal_damage(other.id,ceil(deflect_percent * dmg),tags2)
+    }
 }
 var d_txt = instance_create(x + 100, y + 100,oDamageText);
 d_txt.txt = dmg
