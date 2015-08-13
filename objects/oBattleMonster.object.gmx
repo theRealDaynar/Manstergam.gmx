@@ -667,7 +667,7 @@ if  instance_exists(damage_bond)
 for (var ii=0; ii&lt;4; ii++)
 {
     if instance_exists(emphatuate[ii,0])
-        draw_sprite_ext(sStatusEffectIcon,11,x + i * 20,y + 200 - 34,1,1,0,emphatuate[i,0].name_color,1)
+        draw_sprite_ext(sStatusEffectIcon,11,x + ii * 20,y + 200 - 34,1,1,0,emphatuate[ii,0].name_color,1)
 };
 
 if draw_stats
