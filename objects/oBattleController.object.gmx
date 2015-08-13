@@ -466,7 +466,7 @@ if instance_exists(oBattleMonster)
             for(var i = 0; i &lt; 4; i++)
                 if instance_exists(oPlayerController.monsters[i % 2,i div 2])
                     gain_xpe(oPlayerController.monsters[i % 2,i div 2],xpe_gain)
-            if caught_monster != 0 
+            if caught_monster != noone
             {
                 for(var i = 0; i &lt; 4; i++)
                 if !instance_exists(oPlayerController.monsters[i % 2,i div 2])

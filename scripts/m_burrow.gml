@@ -13,7 +13,7 @@ case m_MTYPE:
     return mt_O
 break;
 case m_TTYPE:
-    return 0;
+    return 4;
 break;
 case m_NAME:
     return "Burrow"

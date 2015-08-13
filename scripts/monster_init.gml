@@ -352,6 +352,7 @@ ds_map_add(resistances,'bio',1.1)
 max_hp = floor(290 * (150 + 17 * lvl) / 1000)
 hp = max_hp
 max_stam = 17
+stam = max_stam
 endurance = 2
 base_spd = 134
 str = 168

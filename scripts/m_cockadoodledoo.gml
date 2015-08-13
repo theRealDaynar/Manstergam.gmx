@@ -16,5 +16,7 @@ case 3:
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
     target.stam -= pow * 5;
+    if target.stam < 0
+        target.stam = 0
     stam -= stam_cost
 }
