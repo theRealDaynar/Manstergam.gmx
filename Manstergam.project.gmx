@@ -131,6 +131,7 @@
       <script>scripts\init_word_highlights.gml</script>
     </scripts>
     <script>scripts\gain_xpe.gml</script>
+    <script>scripts\scale_stat.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fTest</font>
