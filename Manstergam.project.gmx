@@ -40,10 +40,13 @@
     <scripts name="Abilities">
       <script>scripts\m_acid_spit.gml</script>
       <script>scripts\m_attack.gml</script>
+      <script>scripts\m_avalanche.gml</script>
+      <script>scripts\m_metal_spin.gml</script>
       <script>scripts\m_blind.gml</script>
       <script>scripts\m_blood_bite.gml</script>
       <script>scripts\m_body_slam.gml</script>
       <script>scripts\m_laser_beam.gml</script>
+      <script>scripts\m_holy_water.gml</script>
       <script>scripts\m_break.gml</script>
       <script>scripts\m_burning_roll.gml</script>
       <script>scripts\m_burrow.gml</script>

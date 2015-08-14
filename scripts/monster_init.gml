@@ -527,6 +527,34 @@ base_res = 220
 pow = 212
 base_aegis = 294
 break;
+case 22:
+name = "Armor"
+moves[0] = m_deflect
+moves[1] = m_metal_spin
+moves[2] = m_avalanche
+moves[3] = m_holy_water
+ds_map_add(resistances,'normal',.8)
+ds_map_add(resistances,'wind',.8)
+ds_map_add(resistances,'nature',.8)
+ds_map_add(resistances,'earth',1.2)
+ds_map_add(resistances,'heat',1.2)
+ds_map_add(resistances,'water',1.2)
+ds_map_add(resistances,'electric',1.25)
+ds_map_add(resistances,'light',0)
+ds_map_add(resistances,'bio',0)
+max_hp = floor(275 * (150 + 17 * lvl) / 1000)
+hp = max_hp
+max_stam = 28
+stam = max_stam
+endurance = 4
+base_spd = 173
+str = 246
+base_def = 250
+dex = 212
+base_res = 194
+pow = 160
+base_aegis = 185
+break;
 }
 if lvl != 50
 {

@@ -43,5 +43,6 @@
     <frame index="20">images\sMonster_20.png</frame>
     <frame index="21">images\sMonster_21.png</frame>
     <frame index="22">images\sMonster_22.png</frame>
+    <frame index="23">images\sMonster_23.png</frame>
   </frames>
 </sprite>
