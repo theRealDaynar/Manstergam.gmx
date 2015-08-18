@@ -29,6 +29,7 @@
 move_spd = 4
 rot = 0
 show_dialog = 0
+defeated = 0
 </string>
           </argument>
         </arguments>
@@ -52,6 +53,8 @@ show_dialog = 0
           <argument>
             <kind>1</kind>
             <string>room_goto(rBattle)
+with(oPlayerController)
+    last_npc_battled = id
 </string>
           </argument>
         </arguments>
@@ -74,7 +77,7 @@ show_dialog = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if alarm[0] = -1 and collision_line(x,y,x + 10 * 64 * cos(degtorad(image_angle)),y + 10 * 64 * sin(degtorad(image_angle)),oPlayer,0,0)
+            <string>if !defeated and alarm[0] = -1 and collision_line(x,y,x + 10 * 64 * cos(degtorad(image_angle)),y + 10 * 64 * sin(degtorad(image_angle)),oPlayer,0,0)
 {
     show_dialog = true
     oPlayer.stop = true
@@ -110,7 +113,7 @@ rot += 360 / (room_speed / 2)
           <argument>
             <kind>1</kind>
             <string>///draw_dialog
-if show_dialog
+if show_dialog and !defeated
 {
     draw_sprite_ext(sCone,0,x,y,1,1,rot + 180,c_red,.3)
     draw_sprite_ext(sCone,0,x,y,1,1,rot,c_blue,.3)

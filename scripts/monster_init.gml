@@ -555,6 +555,29 @@ base_res = 194
 pow = 160
 base_aegis = 185
 break;
+case 23:
+name = "I AM PLANTO KING OF PLANTS"
+moves[0] = m_pounce
+moves[1] = m_root
+moves[2] = m_natures_call
+moves[3] = m_poison_ivy
+ds_map_add(resistances,'nature',.6)
+ds_map_add(resistances,'heat',1.5)
+ds_map_add(resistances,'water',.8)
+ds_map_add(resistances,'bio',1.1)
+max_hp = floor(220 * (150 + 17 * lvl) / 1000)
+hp = max_hp
+max_stam = 32
+stam = max_stam
+endurance = 7
+base_spd = 244
+str = 184
+base_def = 242
+dex = 172
+base_res = 175
+pow = 190
+base_aegis = 195
+break;
 }
 if lvl != 50
 {

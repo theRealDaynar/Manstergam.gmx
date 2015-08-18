@@ -15,6 +15,12 @@ case 3:
     return "Target team is rotated counter clockwise."
 break;
 case m_COST:return stam_cost;break;case m_EXECUTE:
+    var rooted = 0
+    with(oBattleController)
+        if buffs[? "root"] >= 1
+            rooted = 1
+    if !rooted
+    { 
     if target.team = 1
     {
         with(oBattleController)
@@ -55,7 +61,8 @@ case m_COST:return stam_cost;break;case m_EXECUTE:
                 }
             
         }
-    }  
+    } 
+    }
     stam -= stam_cost
 cd[selected_move] = 1
 break;

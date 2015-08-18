@@ -73,6 +73,9 @@ m_hc = c_white
 m_c = c_blue
 m_ac = c_aqua
 alarm[0] = room_speed
+
+//wolrd interaction
+last_npc_battled = noone
 </string>
           </argument>
         </arguments>
@@ -180,6 +183,9 @@ inv_open = abs( -- inv_open)
                         instance_destroy()
             }
 }
+else if instance_exists(last_npc_battled)
+    with(last_npc_battled)
+        defeated = 1
 </string>
           </argument>
         </arguments>

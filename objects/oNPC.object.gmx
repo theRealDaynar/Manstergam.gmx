@@ -30,6 +30,7 @@ path = path_add()
 move_spd = 2
 show_dialog = 0
 idle_chance = .75
+
 </string>
           </argument>
         </arguments>

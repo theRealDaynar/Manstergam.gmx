@@ -380,7 +380,7 @@ with(oBattleController)
             selected_monster.has_selected_move = 1
             var o_selected_monster = selected_monster;
             for(var i = 0; i &lt; 4; i++)
-                if instance_exists(team_1[i % 2,i div 2]) and team_1[i % 2,i div 2].has_selected_move = 0 and !team_1[i % 2,i div 2].ability_lock and (!ds_map_exists(team_1[i % 2,i div 2].buffs,"sleep") or ds_map_find_value(team_1[i % 2,i div 2].buffs,"sleep") &lt; 1)
+                if instance_exists(team_1[i % 2,i div 2]) and team_1[i % 2,i div 2].has_selected_move = 0 and !team_1[i % 2,i div 2].ability_lock and (!ds_map_exists(team_1[i % 2,i div 2].buffs,"sleep") or ds_map_find_value(team_1[i % 2,i div 2].buffs,"sleep") &lt; 1) and (!ds_map_exists(team_1[i % 2,i div 2].buffs,"stun") or ds_map_find_value(team_1[i % 2,i div 2].buffs,"stun") &lt; 1)
                 {
                     selected_monster = team_1[(i) % 2,(i) div 2]
                     break;
@@ -637,6 +637,11 @@ if buffs[? "disease"] &gt;= 1
 if buffs[? "sleep"] &gt;= 1
 {
     draw_sprite(sStatusEffectIcon,3,x + i * 20,y + 200 - 34)
+    i++
+}
+if buffs[? "stun"] &gt;= 1
+{
+    draw_sprite(sStatusEffectIcon,12,x + i * 20,y + 200 - 34)
     i++
 }
 if buffs[? "curse"] &gt;= 1

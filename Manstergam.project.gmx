@@ -71,6 +71,7 @@
       <script>scripts\m_gnash.gml</script>
       <script>scripts\m_hard_throw.gml</script>
       <script>scripts\m_heal.gml</script>
+      <script>scripts\m_natures_call.gml</script>
       <script>scripts\m_hex.gml</script>
       <script>scripts\m_hypnosis.gml</script>
       <script>scripts\m_killscreen.gml</script>
@@ -81,6 +82,7 @@
       <script>scripts\m_mortify.gml</script>
       <script>scripts\m_ooze_spit.gml</script>
       <script>scripts\m_poison_bite.gml</script>
+      <script>scripts\m_pounce.gml</script>
       <script>scripts\m_poison_ivy.gml</script>
       <script>scripts\m_poison_lick.gml</script>
       <script>scripts\m_powder_rain.gml</script>
@@ -116,6 +118,7 @@
       <script>scripts\m_water_shot.gml</script>
       <script>scripts\m_webshot.gml</script>
       <script>scripts\m_whirl_wind.gml</script>
+      <script>scripts\m_root.gml</script>
       <script>scripts\m_whirl_wind2.gml</script>
       <script>scripts\m_wind_throw.gml</script>
     </scripts>
